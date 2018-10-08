@@ -1,0 +1,61 @@
+body {
+	
+	background-image: url("../images/bg.jpg");
+	/*background-color: #4885ed;*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #A97780;
+	font-family: 'K2D', sans-serif;
+}
+
+h1 {
+	font-size: 50px;
+	margin-bottom: 0;
+	/*background-color: #A97780;*/
+	opacity: 0.75;
+	text-transform: uppercase;
+	letter-spacing: 8px;
+	font-style: italic;
+}
+
+h2 {
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	color: #8777a9;
+}
+
+#me {
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	
+	border-width: 5px;
+	border-style: solid;
+	border-color: white;
+
+	margin-top: 50px;
+}
+
+.bio {
+	width: 100%;
+	font-size: 18px;
+	line-height: 1.5;
+	/*background-color: rgba(51, 51, 51, 0.8);*/
+	/*background-color: #99A977;*/
+	/*opacity: 0.9;*/
+	background-image: -webkit-linear-gradient(bottom, #ccc, #77A9A0, #8777a9); /* For Chrome and Safari */
+    background-image:    -moz-linear-gradient(bottom, #ccc, #77A9A0, #8777a9); /* For old Fx (3.6 to 15) */
+    background-image:     -ms-linear-gradient(bottom, #ccc, #77A9A0, #8777a9); /* For pre-releases of IE 10*/
+    background-image:      -o-linear-gradient(bottom, #ccc, #77A9A0, #8777a9); /* For old Opera (11.1 to 12.0) */
+    background-image:         linear-gradient(to top, #ccc, #77A9A0, #8777a9); /* Standard syntax; must be last */
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: bold;
+}
+
+.container {
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
