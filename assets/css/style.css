@@ -22,7 +22,13 @@ body {
 }
 
 .title {
+	/*
 	transform: rotate(-45deg) translateY(-45px);
+	*/
+	transform: rotate(-45deg) translateY(45px) translateX(-45px);
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .list-group-custom {
@@ -30,4 +36,12 @@ body {
 	top: 0;
 	bottom: 0;
 	left: 0;
+}
+
+.socials {
+	min-height: 40px;
+}
+
+.socials i{
+	font-size: 2rem;
 }

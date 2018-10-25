@@ -8,7 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 	<link rel="shortcut icon" type="image/ico" href="assets/images/favicon.ico"/>
@@ -19,7 +19,7 @@
 <body class="position-relative" data-spy="scroll" data-target="#list-scroll" data-offset="0">
 	<div class="desktop-tablet container-fluid">
 		<div class="row">
-			<div class="col-3 col-md-6 bg-danger">
+			<aside class="col-3 col-md-4 col-lg-6 bg-danger">
 				<div id="list-scroll" class="list-group justify-content-center list-group-custom">
 					<a class="list-group-item list-group-item-action border-0 bg-transparent" href="#list-profile">
 						Profile
@@ -32,34 +32,141 @@
 					</a>
 				</div>
 
-			</div>
-			<div class="col-9 col-md-6 h-min-100">
+			</aside>
+			<main class="col-9 col-md-8 col-lg-6 h-min-100">
 				<div class="row">
 					<div id="list-profile" class="col-12 bg-secondary h-min-full" data-aos="fade-up" data-aos-mirror="true">
 						<div class="profile row">
-							<div class="col-12">
+							<div class="col-12 mb-5 pb-5 h-min-min">
 								<h1 class="title">Profile</h1>
+							</div>
+							<div class="col-12 mt-5 pt-5 px-3 px-md-5 card-body">
+								<h1 class="card-title py-3">Arvin Sevilla</h1>
+								<h2 class="card-subtitle py-3">Full Stack Web Developer</h2>
+								<p class="card-text py-3">
+								He is a Full Stack Web Developer, polyglot, swimming enthusiast, armchair philosopher, and a student of life. He would like to travel around the world, experience different cultures, and speak different languages while contributing to the advancement of civilization through science and technology.
+								</p>
 							</div>
 						</div>
 					</div>
 					<div id="list-project" class="col-12 bg-warning h-min-full" data-aos="fade-up" data-aos-mirror="true">
 						<div class="projects row">
-							<div class="col-12">
+							<div class="col-12 mb-5 pb-5 h-min-min">
 								<h1 class="title">Projects</h1>
+							</div>
+							<div class="col-12 my-5 py-5 px-3 px-md-5 card text-center">
+								<a href="https://sevillaarvin.github.io/capstone1/" target="_blank">
+									<img class="card-image-top img-fluid img-thumbnail" src="assets/images/tmp.jpg">
+								</a>
+								<div class="card-body">
+									<h5 class="card-title">iWantRent</h5>
+									<p class="card-text">iWantRent is a residential property leasing platform that easily matches landlords with tenants for fast and safe lease transactions.</p>
+									<a class="btn btn-primary" href="https://sevillaarvin.github.io/capstone1/" target="_blank">View</a>
+								</div>
+							</div>
+							<div class="col-12 my-5 py-5 px-3 px-md-5 card text-center">
+								<a href="https://sevillaarvin.github.io/capstone1/" target="_blank">
+									<img class="card-image-top img-fluid img-thumbnail" src="assets/images/construction.jpeg">
+								</a>
+								<div class="card-body">
+									<h5 class="card-title">Project2</h5>
+									<p class="card-text">Project 2 is under construction.</p>
+									<a class="btn btn-primary" href="https://sevillaarvin.github.io/capstone1/" target="_blank">View</a>
+								</div>
+							</div>
+							<div class="col-12 my-5 py-5 px-3 px-md-5 card text-center">
+								<a href="https://sevillaarvin.github.io/capstone1/" target="_blank">
+									<img class="card-image-top img-fluid img-thumbnail" src="assets/images/construction.jpeg">
+								</a>
+								<div class="card-body">
+									<h5 class="card-title">Project3</h5>
+									<p class="card-text">Project 3 is under construction.</p>
+									<a class="btn btn-primary" href="https://sevillaarvin.github.io/capstone1/" target="_blank">View</a>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div id="list-contact" class="col-12 bg-info h-min-full" data-aos="fade-up" data-aos-mirror="true">
 						<div class="contact row">
-							<div class="col-12">
+							<div class="col-12 mb-5 pb-5 h-min-min">
 								<h1 class="title">Contact</h1>
+							</div>
+							<div class="col-12 mt-5 pt-5 px-3 px-md-5">
+								<h3 class="col-12 py-3 text-center">Send a message</h3>
+								<div class="form-group row">
+									<label class="col-3 col-md-2 col-form-label col-form-label-sm" for="contactName">Name</label>
+									<div class="col-9 col-md-10">
+										<input class="form-control form-control-sm" id="contactName" type="text" placeholder="Name">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-3 col-md-2 col-form-label col-form-label-sm" for="contactCompany">Company</label>
+									<div class="col-9 col-md-10">
+										<input class="form-control form-control-sm" id="contactCompany" type="text" placeholder="Company">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-3 col-md-2 col-form-label col-form-label-sm" for="contactPhone">Phone</label>
+									<div class="col-9 col-md-10">
+										<input class="form-control form-control-sm" id="contactPhone" type="text" placeholder="Phone">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-3 col-md-2 col-form-label col-form-label-sm" for="contactEmail">Email</label>
+									<div class="col-9 col-md-10">
+										<input class="form-control form-control-sm" id="contactEmail" type="email" placeholder="Email">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-3 col-md-2 col-form-label col-form-label-sm" for="contactMessage">Message</label>
+									<div class="col-9 col-md-10">
+										<textarea class="form-control form-control-sm" id="contactMessage" rows="3" placeholder="Message"></textarea>
+									</div>
+								</div>
+								<div class="form-group row">
+									<div class="col-9 col-md-10">
+										<button class="btn btn-primary" type="submit">Send</button>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-12 bg-success h-min-min">
-			</div>
+			</main>
+			<footer class="col-12 bg-success">
+				<div class="row">
+					<ul class="socials py-1 nav col-12 col-md-6 d-flex justify-content-around bg-warning">
+						<li class="nav-item animated infinite pulse">
+							<a class="" href="https://www.linkedin.com/in/sevillaarvin/" target="_blank">
+								<i class="fab fa-linkedin"></i>
+							</a>
+						</li>
+						<li class="nav-item animated infinite pulse delay-2s slower">
+							<a class="" href="https://www.facebook.com/sevillaarvin" target="_blank">
+								<i class="fab fa-facebook"></i>
+							</a>
+						</li>
+						<li class="nav-item animated infinite pulse delay-3s slow">
+							<a class="" href="https://github.com/sevillaarvin" target="_blank">
+								<i class="fab fa-github"></i>
+							</a>
+						</li>
+						<li class="nav-item animated infinite pulse delay-4s fast">
+							<a class="" href="https://gitlab.com/sevillaarvin" target="_blank">
+								<i class="fab fa-gitlab"></i>
+							</a>
+						</li>
+						<li class="nav-item animated infinite pulse delay-5s faster">
+							<a class="" href="mailto:sevillaarvin@gmail.com" target="_blank">
+								<i class="fab fa-google"></i>
+							</a>
+						</li>
+					</ul>
+					<div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+						<span>&copy; Arvin Sevilla 2018</span>
+					</div>
+				</div>
+			</footer>
 		</div>
 	</div>
 
