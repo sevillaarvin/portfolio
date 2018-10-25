@@ -6,171 +6,82 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"> 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 	<link rel="shortcut icon" type="image/ico" href="assets/images/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 	<title>Arvin Sevilla | Dev Portfolio</title>
 </head>
-<body>
-	<div class="d-lg-flex flex-column" id="body">
-		<nav class="navbar navbar-expand-sm navbar-light bg-light" id="nav">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarContent">
-				<ul class="navbar-nav mx-auto">
-					<li class="nav-item" :class="{active: landingActive}">
-						<a class="nav-link" href="#landing" @click="changeView('landing')">Home</a>
-					</li>
-					<li class="nav-item" :class="{active: portfolioActive}">
-						<a class="nav-link" href="#portfolio" @click="changeView('portfolio')">Portfolio</a>
-					</li>
-					<li class="nav-item" :class="{active: contactActive}">
-						<a class="nav-link" href="#contact" @click="changeView('contact')">Contact</a>
-					</li>
-				</ul>
+<body class="position-relative" data-spy="scroll" data-target="#list-scroll" data-offset="0">
+	<div class="desktop-tablet container-fluid">
+		<div class="row">
+			<div class="col-3 col-md-6 bg-danger">
+				<div id="list-scroll" class="list-group justify-content-center list-group-custom">
+					<a class="list-group-item list-group-item-action border-0 bg-transparent" href="#list-profile">
+						Profile
+					</a>
+					<a class="list-group-item list-group-item-action border-0 bg-transparent" href="#list-project">
+						Projects
+					</a>
+					<a class="list-group-item list-group-item-action border-0 bg-transparent" href="#list-contact">
+						Contact
+					</a>
+				</div>
+
 			</div>
-		</nav>
-		<div class="container d-lg-none">
-			<section class="row" id="landing">
-				<div class="vue-container">
-					<div class="col-12 col-lg-auto mb-3 d-flex justify-content-center">
-						<img class="rounded-circle mx-auto" src="assets/images/me.jpg">
-					</div>
-					<div class="col-12 col-lg-4 mx-auto card text-center">
-						<div class="card-body d-lg-flex flex-lg-column justify-content-center">
-							<h1 class="card-title">Arvin Sevilla</h1>
-							<h2 class="card-subtitle mb-3">Full Stack Web Developer</h2>
-							<p class="card-text">
-							Arvin Sevilla is a Full Stack Web Developer, polyglot, swimming enthusiast, armchair philosopher, and a student of life. He would like to travel around the world, experience different cultures, and speak different languages while contributing to the advancement of civilization through science and technology.
-							</p>
+			<div class="col-9 col-md-6 h-min-100">
+				<div class="row">
+					<div id="list-profile" class="col-12 bg-secondary h-min-full" data-aos="fade-up" data-aos-mirror="true">
+						<div class="profile row">
+							<div class="col-12">
+								<h1 class="title">Profile</h1>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-			<section class="row my-3" id="portfolio">
-				<div class="vue-container">
-					<h3 class="col-12 col-lg-auto text-center">Portfolio</h3>
-					<div class="col-12 col-lg-auto">
-						<div class="row">
-							<div class="card text-center col-md-6 col-lg-4">
-								<a href="https://sevillaarvin.github.io/capstone1/" target="_blank">
-									<img class="card-image-top img-fluid img-thumbnail" src="assets/images/tmp.jpg">
-								</a>
-								<div class="card-body">
-									<h5 class="card-title">iWantRent</h5>
-									<p class="card-text">iWantRent is a residential property leasing platform that easily matches landlords with tenants for fast and safe lease transactions.</p>
-									<a class="btn btn-primary" href="https://sevillaarvin.github.io/capstone1/" target="_blank">View</a>
-								</div>
+					<div id="list-project" class="col-12 bg-warning h-min-full" data-aos="fade-up" data-aos-mirror="true">
+						<div class="projects row">
+							<div class="col-12">
+								<h1 class="title">Projects</h1>
 							</div>
-							<div class="card text-center col-md-6 col-lg-4">
-								<a href="https://sevillaarvin.github.io/capstone1/" target="_blank">
-									<img class="card-image-top img-fluid img-thumbnail" src="assets/images/construction.jpeg">
-								</a>
-								<div class="card-body">
-									<h5 class="card-title">Project2</h5>
-									<p class="card-text">Project 2 is under construction.</p>
-									<a class="btn btn-primary" href="https://sevillaarvin.github.io/capstone1/" target="_blank">View</a>
-								</div>
-							</div>
-							<div class="card text-center col-md-12 mt-md-3 col-lg-4 mt-lg-0">
-								<a href="https://sevillaarvin.github.io/capstone1/" target="_blank">
-									<img class="card-image-top img-fluid img-thumbnail" src="assets/images/construction.jpeg">
-								</a>
-								<div class="card-body">
-									<h5 class="card-title">Project3</h5>
-									<p class="card-text">Project 3 is under construction.</p>
-									<a class="btn btn-primary" href="https://sevillaarvin.github.io/capstone1/" target="_blank">View</a>
-								</div>
+						</div>
+					</div>
+					<div id="list-contact" class="col-12 bg-info h-min-full" data-aos="fade-up" data-aos-mirror="true">
+						<div class="contact row">
+							<div class="col-12">
+								<h1 class="title">Contact</h1>
 							</div>
 						</div>
 					</div>
 				</div>
-			</section>
-			<form class="row bg-white" id="contact">
-				<div class="vue-container col-12 col-lg-auto">
-					<div class="col-12 col-lg-auto">
-						<h3 class="col-12 col-lg-auto text-center">Send a message</h3>
-						<div class="form-group row">
-							<label class="col-3 col-md-2 col-form-label" for="contactName">Name</label>
-							<div class="col-9 col-md-10">
-								<input class="form-control" id="contactName" type="text" placeholder="Name">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-3 col-md-2 col-form-label" for="contactCompany">Company</label>
-							<div class="col-9 col-md-10">
-								<input class="form-control" id="contactCompany" type="text" placeholder="Company">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-3 col-md-2 col-form-label" for="contactPhone">Phone</label>
-							<div class="col-9 col-md-10">
-								<input class="form-control" id="contactPhone" type="text" placeholder="Phone">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-3 col-md-2 col-form-label" for="contactEmail">Email</label>
-							<div class="col-9 col-md-10">
-								<input class="form-control" id="contactEmail" type="email" placeholder="Email">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-3 col-md-2 col-form-label" for="contactMessage">Message</label>
-							<div class="col-9 col-md-10">
-								<textarea class="form-control" id="contactMessage" rows="3" placeholder="Message"></textarea>
-							</div>
-						</div>
-						<div class="form-group row">
-							<div class="col-9 col-md-10">
-								<button class="btn btn-primary" type="submit">Send</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</form>
+			</div>
+			<div class="col-12 bg-success h-min-min">
+			</div>
 		</div>
-		<div id="app"></div>
-		<footer class="bg-dark text-light">
-			<ul class="nav justify-content-center">
-				<li class="nav-item">
-					<a class="nav-link" href="https://www.linkedin.com/in/sevillaarvin/" target="_blank">
-						<i class="fab fa-linkedin"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="https://www.facebook.com/sevillaarvin" target="_blank">
-						<i class="fab fa-facebook"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="https://github.com/sevillaarvin" target="_blank">
-						<i class="fab fa-github"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="https://gitlab.com/sevillaarvin" target="_blank">
-						<i class="fab fa-gitlab"></i>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="mailto:sevillaarvin@gmail.com" target="_blank">
-						<i class="fab fa-google"></i>
-					</a>
-				</li>
-				<li class="nav-item d-flex align-items-center">
-					<span>&copy; Arvin Sevilla 2018</span>
-				</li>
-			</ul>
-		</footer>
 	</div>
 
+	<div class="d-none mobile container">
+	</div>
+
+	<!--
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	-->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+	  AOS.init();
+	</script>
+	<script src="assets/js/dist.js"></script>
+
+	<!--
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="assets/js/App.js"></script>
+	-->
 </body>
 </html>
