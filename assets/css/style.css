@@ -6,6 +6,7 @@ body {
 	background-image: url("../images/bg2.jpg");
 	background-size: cover;
 	background-attachment: fixed;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 .h-min-full {
@@ -42,11 +43,13 @@ body {
 }
 
 #list-project-header .title {
-	border: 1px dashed #fff;
+	border-top: 2px dashed #fff;
+	border-bottom: 2px dashed #fff;
 }
 
 .title {
-	border: 1px dashed black;
+	border-top: 2px dashed #333;
+	border-bottom: 2px dashed #333;
 	transform: rotate(-45deg) translateY(45px) translateX(-45px);
 	position: absolute;
 	top: 0;
@@ -69,6 +72,13 @@ body {
 	font-weight: bold;
 	*/
 	transition: 0.5s ease;
+}
+
+.profile .icon {
+}
+
+.profile i {
+	font-size: 2.5rem;
 }
 
 .socials {
@@ -103,7 +113,7 @@ body {
 .legals a,
 .legals {
 	text-decoration: none;
-	color: indianred;
+	color: #000;
 }
 
 /* cursor effects */
