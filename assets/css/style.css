@@ -3,6 +3,9 @@ html {
 }
 
 body {
+	background-image: url("../images/bg2.jpg");
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 .h-min-full {
@@ -21,10 +24,29 @@ body {
 	min-height: 10vh;
 }
 
+#list-scroll > a {
+	background: rgba(255, 255, 255, 0.4);
+}
+
+#list-contact-header,
+#list-profile-header {
+	background: rgba(255, 255, 255, 0.8);
+}
+
+#list-project-header {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+#list-project h1 {
+	color: #fff;
+}
+
+#list-project-header .title {
+	border: 1px dashed #fff;
+}
+
 .title {
-	/*
-	transform: rotate(-45deg) translateY(-45px);
-	*/
+	border: 1px dashed black;
 	transform: rotate(-45deg) translateY(45px) translateX(-45px);
 	position: absolute;
 	top: 0;
@@ -38,10 +60,66 @@ body {
 	left: 0;
 }
 
-.socials {
-	min-height: 40px;
+.list-group-item.active {
+	/*
+	transform: translateX(25px);
+	width: 100px;
+	transform: scale(1.5, 1);
+	transition: 0.5s ease;
+	font-weight: bold;
+	*/
+	transition: 0.5s ease;
 }
 
-.socials i{
-	font-size: 2rem;
+.socials {
+	min-height: 100px;
+}
+
+.socials li {
+}
+
+.socials i {
+	/*
+	min-height: 3rem;
+	min-width: 3rem;
+	text-align: center;
+	vertical-align: center;
+	*/
+	font-size: 2.5rem;
+	border-radius: 50%;
+	color: #333;
+}
+
+.socials i:hover {
+	/*
+	background-color: #333;
+	*/
+	color: #f2f2f2;
+	font-size: 2.5rem;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+	transition: 0.1s ease-in;
+}
+
+.legals a,
+.legals {
+	text-decoration: none;
+	color: indianred;
+}
+
+.ball {
+  pointer-events: none;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: gray;
+  animation: implode 1s ease-in-out;
+  animation-fill-mode: both;
+  opacity: .5;
+}
+
+@keyframes implode {
+  100% {
+    transform: scale(0);
+  }
 }
