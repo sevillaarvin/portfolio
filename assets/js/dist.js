@@ -34,5 +34,13 @@ $(document).ready(function(){
       var style = left+top+color+size;
       $("<div class='ball' style='" + style + "'></div>").appendTo('#wrap').one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){$(this).remove();}); 
     }
-  }, 25);
+  }, 5);
 });
+
+document.onscroll = function() {
+    if (window.innerHeight + window.scrollY >= document.body.clientHeight) {
+        document.getElementById('chevron').style.display='none';
+    } else {
+        document.getElementById('chevron').style.display='flex';
+    }
+}
