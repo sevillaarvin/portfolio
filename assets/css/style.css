@@ -38,6 +38,25 @@ body {
 	background: rgba(0, 0, 0, 0.8);
 }
 
+#list-project-header h3 {
+	font-weight: bold;
+}
+
+.technologies div {
+	border-radius: 50%;
+	/*
+	background-color: #333;
+	*/
+	background-color: #00BB38;
+	min-width: 50px;
+	min-height: 50px;
+}
+
+.technologies i {
+	font-size: 2rem;
+	color: #fff;
+}
+
 #list-project h1 {
 	color: #fff;
 }
@@ -64,14 +83,11 @@ body {
 }
 
 .list-group-item.active {
-	/*
-	transform: translateX(25px);
-	width: 100px;
-	transform: scale(1.5, 1);
 	transition: 0.5s ease;
-	font-weight: bold;
-	*/
-	transition: 0.5s ease;
+}
+
+.img-custom-pointer {
+	cursor: pointer;
 }
 
 .profile .icon {
@@ -89,21 +105,12 @@ body {
 }
 
 .socials i {
-	/*
-	min-height: 3rem;
-	min-width: 3rem;
-	text-align: center;
-	vertical-align: center;
-	*/
 	font-size: 2.5rem;
 	border-radius: 50%;
 	color: #333;
 }
 
 .socials i:hover {
-	/*
-	background-color: #333;
-	*/
 	color: #f2f2f2;
 	font-size: 2.5rem;
 	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
@@ -147,12 +154,12 @@ body {
   height: 150px;
   bottom: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 999;
   pointer-events: none;
 }
 
 .chevron {
-  z-index: 9999;
+  z-index: 999;
   position: absolute;
   width: 2.1rem;
   height: 0.48rem;
@@ -236,4 +243,10 @@ body {
     -webkit-transform: translateY(4.8rem) scale(0.5);
             transform: translateY(4.8rem) scale(0.5);
   }
+}
+
+.modal.fade .link-custom,
+.modal.fade .link-custom:hover {
+	text-decoration: none;
+	color: #00BB38;
 }
