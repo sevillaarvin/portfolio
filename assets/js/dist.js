@@ -1,4 +1,17 @@
-$(document).ready(function(){
+let draw
+let inputs = Array.from(document.getElementsByTagName("input"))
+inputs = inputs.concat(Array.from(document.getElementsByTagName("textarea")))
+
+inputs.forEach((input) => {
+  input.addEventListener("focus", () => {
+    clearInterval(draw)
+  })
+  input.addEventListener("blur", () => {
+    trail()
+  })
+})
+
+function trail() {
   
   var mousePos = {};
 
@@ -16,7 +29,7 @@ $(document).ready(function(){
     mousePos.y = -1;
   });
   
-  var draw = setInterval(function(){
+  draw = setInterval(function(){
     if(mousePos.x > 0 && mousePos.y > 0){
       
       var range = 15;
@@ -34,7 +47,9 @@ $(document).ready(function(){
       $("<div class='ball' style='" + style + "'></div>").appendTo('#wrap').one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){$(this).remove();}); 
     }
   }, 5);
-});
+}
+
+$(document).ready(trail);
 
 document.onscroll = function() {
     if (window.innerHeight + window.scrollY >= document.body.clientHeight) {
