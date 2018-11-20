@@ -311,3 +311,15 @@ body {
 #about-me-modal {
 	font-family: 'Ubuntu Mono', monospace;
 }
+
+.quotes {
+	background: rgba(0, 0, 0, 0.3);
+	color: #fff;
+}
+
+.quote {
+	min-height: 90vh;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+}
