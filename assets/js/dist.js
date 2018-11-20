@@ -11,6 +11,14 @@ inputs.forEach((input) => {
   })
 })
 
+let imgMe = document.getElementsByClassName("img-me")[0]
+imgMe.addEventListener("mouseenter", e => {
+  clearInterval(draw)
+})
+imgMe.addEventListener("mouseleave", e => {
+  trail()
+})
+
 function trail() {
   
   var mousePos = {};
@@ -58,3 +66,7 @@ document.onscroll = function() {
         document.getElementById('chevron').style.display='flex';
     }
 }
+
+$("#about-contact").click(() => {
+	$("#about-me-modal").modal("hide")
+})
