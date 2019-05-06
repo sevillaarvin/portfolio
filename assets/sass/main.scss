@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  /* Allows user to modify browser font-size for accessibility */
+  font-size: 62.5%; /* 10px / 16px */
+}
+
+body {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+}
+
+.page {
+  display: grid;
+  padding: 1.5rem;
+}
+
+.avatar {
+  &_container {
+    text-align: center;
+  }
+
+  &_image {
+    border-radius: 50%;
+    width: 12rem;
+  }
+}
+
+.content {
+  &_header {
+    margin: 1.5rem 0;
+  }
+
+  &_subheader {
+    margin: 1.2rem 0;
+  }
+}
+
+
+/* TEMPORARY */
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+

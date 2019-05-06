@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run compile:sass -- -w & npm run browser-sync",
+    "browser-sync": "browser-sync start --server --files=\"**/*\"",
+    "compile:sass": "node-sass assets/sass/main.scss assets/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sevillaarvin/portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sevillaarvin/portfolio/issues"
+  },
+  "homepage": "https://github.com/sevillaarvin/portfolio#readme",
+  "devDependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
