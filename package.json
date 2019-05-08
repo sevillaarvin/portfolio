@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
+    "watch": "webpack-dev-server",
+    "start": "npm run compile:sass -- -w & npm run serve",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run compile:sass -- -w & npm run browser-sync",
-    "browser-sync": "browser-sync start --server --files=\"**/*\"",
     "compile:sass": "node-sass assets/sass/main.scss assets/css/style.css"
   },
   "repository": {
@@ -20,6 +21,17 @@
   },
   "homepage": "https://github.com/sevillaarvin/portfolio#readme",
   "devDependencies": {
-    "node-sass": "^4.12.0"
+    "browser-sync": "^2.26.5",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
   }
 }
