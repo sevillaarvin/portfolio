@@ -24,27 +24,44 @@ body {
 .page {
   display: grid;
   padding: 1.5rem;
+  max-width: 64rem;
+  margin: 0 auto;
 }
 
 .avatar {
-  &_container {
+  &__container {
     text-align: center;
   }
 
-  &_image {
+  &__image {
     border-radius: 50%;
     width: 12rem;
   }
 }
 
 .content {
-  &_header {
+  &__header {
     margin: 1.5rem 0;
   }
 
-  &_subheader {
+  &__subheader {
     margin: 1.2rem 0;
   }
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.subpage {
+  &--hidden {
+    display: none;
+  }
+}
+
+/* Utilities */
+.hidden {
+  display: none;
 }
 
 
