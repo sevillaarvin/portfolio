@@ -42,6 +42,8 @@ module.exports = {
       reload: false
     }),
     new HtmlWebpackPlugin({
+      name: "Arvin Sevilla",
+      title: "Software Engineer",
       template: "src/index.html"
     }),
   ],

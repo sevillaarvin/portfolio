@@ -4,77 +4,27 @@
   box-sizing: inherit;
 }
 
+body {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  // TODO: Insert css custom properties here
+}
+
 html {
   /* Allows user to modify browser font-size for accessibility */
   font-size: 62.5%; /* 10px / 16px */
 }
 
 body {
-  box-sizing: border-box;
-}
-
-body {
+  // TODO: Select better font
   font-family: Lato, sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #777;
+  line-height: 1.6;
 }
-
-.page {
-  display: grid;
-  padding: 1.5rem;
-  max-width: 64rem;
-  margin: 0 auto;
-}
-
-.avatar {
-  &__container {
-    text-align: center;
-  }
-
-  &__image {
-    border-radius: 50%;
-    width: 12rem;
-  }
-}
-
-.content {
-  &__header {
-    margin: 1.5rem 0;
-  }
-
-  &__subheader {
-    margin: 1.2rem 0;
-  }
-
-  &--hidden {
-    display: none;
-  }
-}
-
-.subpage {
-  &--hidden {
-    display: none;
-  }
-}
-
-/* Utilities */
-.hidden {
-  display: none;
-}
-
-
-/* TEMPORARY */
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.green {
-  background-color: green;
-}
-
