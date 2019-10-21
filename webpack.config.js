@@ -13,12 +13,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.css$/,
         use: [
           "style-loader",
           "css-loader",
-          "sass-loader"
-        ]
+          {
+            loader: "postcss-loader",
+            options: {
+              ident: "postcss",
+              plugins: [
+                require("tailwindcss"),
+                require("autoprefixer"),
+              ],
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpe?g|gif)$/,
@@ -27,10 +36,10 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: '[path][name].[ext]',
-            }
-          }
-        ]
-      }
+            },
+          },
+        ],
+      },
     ]
   },
   plugins: [

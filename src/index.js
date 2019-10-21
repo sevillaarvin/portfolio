@@ -1,1 +1,1 @@
-require("../assets/sass/main.scss")
+require("../assets/css/style.css")
