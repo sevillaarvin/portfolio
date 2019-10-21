@@ -3,6 +3,8 @@ const BrowserSyncPlugin = require("browser-sync-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
+  // default:
+  // entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, "public")
   },
