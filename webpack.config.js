@@ -1,8 +1,9 @@
 const path = require("path")
+const glob = require("glob")
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
-// TODO: Use in production
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const PurgecssPlugin = require("purgecss-webpack-plugin")
 
 module.exports = {
   // default:
@@ -10,12 +11,24 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "public")
   },
-  module: {
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: "styles",
+            test: /\.css$/,
+            chunks: "all",
+            enforce: true,
+          },
+        },
+      },
+    },
+    module: {
     rules: [
       {
         test: /\.css$/,
         use: [
-          "style-loader",
+          MiniCssExtractPlugin.loader,
           "css-loader",
           {
             loader: "postcss-loader",
@@ -54,6 +67,13 @@ module.exports = {
       name: "Arvin Sevilla",
       title: "Software Engineer",
       template: "src/index.html"
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css",
+    }),
+    new PurgecssPlugin({
+      paths: glob.sync(`${path.resolve(__dirname, "src")}/**/*`, {nodir: true}),
     }),
   ],
   devServer: {
