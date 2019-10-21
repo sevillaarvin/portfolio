@@ -1,6 +1,8 @@
 const path = require("path")
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+// TODO: Use in production
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
   // default:
