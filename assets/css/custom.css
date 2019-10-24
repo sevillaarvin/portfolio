@@ -1,0 +1,24 @@
+.header {
+    position: relative;
+    background-color: transparent;
+    @apply text-gray-700;
+    @apply pt-2;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top: 6rem solid #e2e8f0;
+    border-left: 3.5rem solid transparent;
+    border-right: 3.5rem solid transparent;
+    height: 0;
+    width: 14rem;
+    z-index: -1;
+}
+
+.footer__box {
+    filter: drop-shadow(0 .5rem .3rem rgba(0,0,0,0.6));
+}

@@ -47,7 +47,7 @@ module.exports = (env, argv) => {
                     ],
                 },
                 {
-                    test: /\.(png|jpe?g|gif)$/,
+                    test: /\.(png|jpe?g|gif|ico)$/,
                     use: [
                         {
                             loader: "file-loader",
@@ -84,7 +84,7 @@ module.exports = (env, argv) => {
                 : [],
         ],
         devServer: {
-            port: 3100
+            port: 3100,
         },
     }
 }
