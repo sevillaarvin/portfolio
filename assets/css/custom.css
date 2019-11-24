@@ -1,24 +1,45 @@
 .header {
-    position: relative;
-    background-color: transparent;
+    @apply relative;
     @apply text-gray-700;
     @apply pt-2;
+    @apply bg-transparent;
 }
 
 .header::before {
+    @apply absolute;
+    @apply top-0;
+    @apply h-0;
+    @apply w-56;
     content: "";
-    position: absolute;
-    top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
     border-top: 6rem solid #e2e8f0;
     border-left: 3.5rem solid transparent;
     border-right: 3.5rem solid transparent;
-    height: 0;
-    width: 14rem;
     z-index: -1;
 }
 
 .footer__box {
     filter: drop-shadow(0 .5rem .3rem rgba(0,0,0,0.6));
+}
+
+.contact__input {
+    @apply hidden;
+}
+
+.contact__page {
+    @apply absolute;
+    @apply top-0;
+    @apply left-0;
+    @apply opacity-0;
+    transform: translateY(8rem);
+    transition: all 0.3s;
+}
+
+.contact__input:checked + .contact__page {
+    @apply w-screen;
+    @apply h-screen;
+    @apply opacity-100;
+    background: linear-gradient(#f7b733 60%, #fc4a1a);
+    transform: translateY(0);
 }
