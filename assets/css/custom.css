@@ -1,3 +1,11 @@
+.transition-3 {
+    transition: all 0.3s;
+}
+
+.transition-8 {
+    transition: all 0.8s ease-in-out;
+}
+
 .header {
     @apply relative;
     @apply text-gray-700;
@@ -20,26 +28,47 @@
 }
 
 .footer__box {
-    filter: drop-shadow(0 .5rem .3rem rgba(0,0,0,0.6));
+    filter: drop-shadow(0 .5rem .3rem rgba(0, 0, 0, 0.6));
 }
 
 .contact__input {
     @apply hidden;
 }
 
+.contact__page::before {
+    @apply transition-8;
+    @apply fixed;
+    @apply top-0;
+    border-radius: 50%;
+
+    /**
+     * TODO: Media query, swap vw to vh when max-height > max-width
+     */
+    width: 50vw;
+    height: 50vw;
+
+    background: radial-gradient(#f7b733, #fc4a1a);
+    content: "";
+    z-index: -1;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+}
+
 .contact__page {
+    @apply transition-8;
     @apply absolute;
     @apply top-0;
     @apply left-0;
+    @apply w-full;
+    @apply h-full;
     @apply opacity-0;
-    transform: translateY(8rem);
-    transition: all 0.3s;
+    @apply z-10;
+}
+
+.contact__input:checked + .contact__page::before {
+    transform: scale(12);
 }
 
 .contact__input:checked + .contact__page {
-    @apply w-screen;
-    @apply h-screen;
     @apply opacity-100;
-    background: linear-gradient(#f7b733 60%, #fc4a1a);
-    transform: translateY(0);
 }
