@@ -31,6 +31,41 @@
     filter: drop-shadow(0 .5rem .3rem rgba(0, 0, 0, 0.6));
 }
 
+.resume__input {
+    @apply hidden;
+}
+
+.resume__page {
+    @apply transition-8;
+    @apply absolute;
+    @apply top-0;
+    @apply left-0;
+    @apply w-full;
+    @apply h-full;
+    @apply opacity-0;
+    @apply invisible;
+    @apply z-30;
+    @apply p-8;
+    background: indianred;
+}
+
+.resume__close {
+    @apply absolute;
+    @apply top-0;
+    @apply right-0;
+    @apply block;
+    @apply m-8;
+}
+
+.resume__input:checked + .resume__page::before {
+    transform: scale(12);
+}
+
+.resume__input:checked + .resume__page {
+    @apply opacity-100;
+    @apply visible;
+}
+
 .contact__input {
     @apply hidden;
 }
@@ -62,6 +97,7 @@
     @apply w-full;
     @apply h-full;
     @apply opacity-0;
+    @apply invisible;
     @apply z-10;
 }
 
@@ -71,4 +107,5 @@
 
 .contact__input:checked + .contact__page {
     @apply opacity-100;
+    @apply visible;
 }
