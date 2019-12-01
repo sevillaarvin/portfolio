@@ -32,16 +32,30 @@
   ],
   "work": [
     {
+      "highlights": [],
+      "company": "Yondu, Inc.",
+      "position": "Frontend Developer",
+      "location": "BGC, Taguig, Philippines",
+      "startDate": "Oct 2019",
+      "endDate": "Present"
+    },
+    {
       "highlights": [
-        "Implement features for restaurant integration",
-        "Implement operations reporting module",
-        "Maintain existing functionality"
+        "Implement attendance summary reports",
+        "Implement email notifications for requests",
+        "Implement JWT authentication",
+        "Add other CRUD features",
+        "Implement features for restaurant POS integration",
+        "Implement operations reporting (sale, purchase, inventory) module",
+        "Implement unit and integration testing",
+        "Update and maintain database migration files",
+        "Maintenance and debugging"
       ],
       "company": "Posbang Inc.",
-      "position": "Junior Software Developer",
+      "position": "Junior Software Engineer",
       "location": "Mandaluyong, Philippines",
       "startDate": "Feb 2019",
-      "endDate": "Present"
+      "endDate": "Oct 2019"
     },
     {
       "position": "Chief Technology Officer",
@@ -54,7 +68,7 @@
         "Website Administration - Wordpress/Wix",
         "Marketing Technologist - Mautic",
         "System Administration - Windows Server 2012",
-        "API Development and Technical Support"
+        "API Development and Technical Support - Accounting Software"
       ]
     },
     {
@@ -75,14 +89,14 @@
       "endDate": "Jun 2017",
       "location": "Pasig, Philippines",
       "highlights": [
-        "Reviewed general accounting transactions and closed books monthly."
+        "Recorded, reviewed, and closed general accounting transactions monthly."
       ]
     },
     {
       "endDate": "Feb 2016",
       "startDate": "Nov 2014",
       "highlights": [
-        "Provided financial assurance services/external audit mainly to food manufacturing, retail, and real estate companies."
+        "Provided financial assurance services/external audit to food manufacturing, retail, and real estate companies."
       ],
       "location": "Makati, Philippines",
       "position": "Audit Associate",
@@ -91,63 +105,76 @@
   ],
   "skills": [
     {
-      "name": "Libraries / Frameworks",
+      "name": "Frontend",
       "keywords": [
-        "Laravel 5",
-        "Vue.js 2",
-        "Sass",
+        "Vue.js",
         "Vuetify",
-        "Nuxt.js 2",
-        "Express.js 4",
-        "Knex.js",
-        "React.js"
+        "Bootstrap",
+        "Sass",
+        "Tailwind CSS",
+        "Npm",
+        "Webpack",
+        "Babel",
+        "SVG",
+        "GSAP",
+        "Elm",
+        "d3.js",
+        "Nuxt.js"
       ]
     },
     {
-      "name": "Testing",
+      "name": "Backend",
       "keywords": [
-        "Mocha.js",
-        "Chai",
-        "Sinon.js",
-        "PHPUnit",
-        "Prophecy"
+        "Laravel",
+        "Yii",
+        "Rails",
+        "Express.js"
       ]
-    },
-    {
-      "keywords": [
-        "PHP 7",
-        "JavaScript ES6 / Node.js",
-        "VBA",
-        "Python3",
-        "Java",
-        "C"
-      ],
-      "name": "Programming Languages"
     },
     {
       "keywords": [
         "MySQL",
         "PostgreSQL",
-        "SQLite",
-        "MongoDB"
+        "SQLite"
       ],
       "name": "Database Languages"
     },
     {
+      "name": "Testing",
+      "keywords": [
+        "PHPUnit",
+        "Codeception",
+        "Prophecy",
+        "Mocha.js",
+        "Chai",
+        "Sinon.js"
+      ]
+    },
+    {
+      "keywords": [
+        "JavaScript",
+        "PHP",
+        "Ruby",
+        "Elm",
+        "Python",
+        "VBA"
+      ],
+      "name": "Programming Languages"
+    },
+    {
       "name": "Markup / File Format",
       "keywords": [
-        "HTML 5",
-        "CSS 3",
+        "HTML",
         "JSON",
         "Markdown",
-        "XML",
-        "YAML"
+        "YAML",
+        "XML"
       ]
     },
     {
       "name": "Enterprise Resource Planning",
       "keywords": [
-        "QuickBooks Enterprise 2017",
+        "QuickBooks Enterprise",
         "PeopleSoft, ProSume, Cognos",
         "SAP ECC 6.0"
       ]
@@ -155,35 +182,39 @@
     {
       "name": "DevOps Tools",
       "keywords": [
-        "Git, Gitlab CI",
-        "Webpack 4",
         "Docker / Docker-Compose",
-        "Vagrant"
-      ]
-    },
-    {
-      "name": "IDE / Editors",
-      "keywords": [
-        "Vim 8",
-        "PHPStorm 2019",
-        "Visual Studio Code",
-        "Android Studio 3"
+        "LXC / LXD",
+        "Vagrant / VirtualBox",
+        "Gitlab CI"
       ]
     },
     {
       "keywords": [
+        "Git",
         "SSH",
-        "Apache 2, Nginx",
-        "Bash 4",
+        "Nginx",
+        "Apache",
+        "Bash",
+        "PowerShell",
         "Linux",
-        "PowerShell 5",
-        "Microsoft Office",
-        "Windows 10"
+        "Windows"
       ],
       "name": "Other Technologies"
     }
   ],
   "projects": [
+    {
+      "description": "Social media platform to share your thoughts.",
+      "name": "Yeet",
+      "keywords": [
+        "Laravel 5",
+        "HTML 5",
+        "CSS 3",
+        "JavaScript / ES 6",
+        "MySQL"
+      ],
+      "url": "https://salty-brushlands-14409.herokuapp.com/"
+    },
     {
       "description": "E-commerce site for water enthusiasts.",
       "name": "Club Seville",
@@ -199,7 +230,7 @@
       "url": "https://clubseville.icu"
     },
     {
-      "description": "Front-end of an AI driven platform assisting in finding people a place to live.",
+      "description": "Frontend for a hypothetical AI driven platform assisting in finding people a place to live.",
       "name": "Rentlify",
       "keywords": [
         "Vue.js 2",
