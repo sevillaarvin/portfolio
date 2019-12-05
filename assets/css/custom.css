@@ -49,6 +49,46 @@
     background: indianred;
 }
 
+.resume__sheet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, min-content);
+    grid-template-areas: "name contact"
+                         "experience experience"
+                         "skill skill"
+                         "project project"
+                         "education education"
+                         "award award";
+}
+
+.resume__name {
+    grid-area: name;
+}
+
+.resume__contact {
+    grid-area: contact;
+}
+
+.resume__experience {
+    grid-area: experience;
+}
+
+.resume__skill {
+    grid-area: skill;
+}
+
+.resume__project {
+    grid-area: project;
+}
+
+.resume__education {
+    grid-area: education;
+}
+
+.resume__award {
+    grid-area: award;
+}
+
 .resume__close {
     @apply absolute;
     @apply top-0;

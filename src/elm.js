@@ -5139,49 +5139,70 @@ var $author$project$Main$view = function (model) {
 			[
 				A2(
 				$elm$html$Html$div,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__name')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text('NAME')
 					])),
 				A2(
 				$elm$html$Html$div,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__contact')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text('CONTACT DETAILS')
 					])),
 				A2(
 				$elm$html$Html$div,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__experience')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text('EXPERIENCE')
 					])),
 				A2(
 				$elm$html$Html$div,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__skill')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text('SKILLS')
 					])),
 				A2(
 				$elm$html$Html$div,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__project')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text('PROJ')
 					])),
 				A2(
 				$elm$html$Html$div,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__education')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text('EDUC')
 					])),
 				A2(
 				$elm$html$Html$div,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__award')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text('AWARDS')
