@@ -3,6 +3,7 @@ node_modules/
 
 # Build files
 public/
+elm-stuff/
 
 # IDE
 .idea/
