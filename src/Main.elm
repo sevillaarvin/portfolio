@@ -171,13 +171,11 @@ subscriptions model =
 update : Msg -> Model -> ( Model, Cmd msg )
 update msg model =
     case msg of
-        GotResume result ->
-            case result of
-                Ok resume ->
-                    ( { model | resume = resume }, Cmd.none )
+        GotResume (Ok resume) ->
+            ( { model | resume = resume }, Cmd.none )
 
-                Err err ->
-                    ( model, Cmd.none )
+        GotResume (Err err) ->
+            ( model, Cmd.none )
 
 
 view : Model -> Html Msg
@@ -204,7 +202,7 @@ view model =
                 ]
             ]
         , div [ class "resume__experience" ] (h2 [ class "text-2xl" ] [ text "Experience" ] :: List.map experienceView resume.experiences)
-        , div [ class "resume__skill" ] (h2 [] [ text "Skills" ] :: List.map skillView resume.skills)
+        , div [ class "resume__skill" ] (h2 [ class "text-2xl" ] [ text "Skills" ] :: List.map skillView resume.skills)
         , div [ class "resume__project" ] (h2 [] [ text "Projects" ] :: List.map projectView resume.projects)
         , div [ class "resume__education" ] (h2 [] [ text "Education" ] :: List.map educationView resume.education)
         , div [ class "resume__award" ] (h2 [] [ text "Awards" ] :: List.map awardView resume.awards)
@@ -229,9 +227,9 @@ highlightView highlight =
 
 skillView : Skill -> Html msg
 skillView skill =
-    div []
-        [ p [] [ text skill.name ]
-        , ul [] (List.map (\keyword -> li [] [ text keyword ]) skill.keywords)
+    div [ class "resume__skill-item" ]
+        [ p [ class "resume__skill-name", class "font-semibold" ] [ text skill.name ]
+        , ul [ class "resume__skill-list" ] (List.map (\keyword -> li [] [ text keyword ]) skill.keywords)
         ]
 
 

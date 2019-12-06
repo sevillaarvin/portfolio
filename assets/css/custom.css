@@ -135,6 +135,18 @@
     background-color: blue;
 }
 
+.resume__skill-item {
+    @apply my-2;
+}
+
+.resume__skill-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+}
+
 .resume__project {
     grid-area: project;
     background-color: indigo;

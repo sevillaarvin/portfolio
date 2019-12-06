@@ -11149,16 +11149,15 @@ var $author$project$Main$subscriptions = function (model) {
 };
 var $author$project$Main$update = F2(
 	function (msg, model) {
-		var result = msg.a;
-		if (result.$ === 'Ok') {
-			var resume = result.a;
+		if (msg.a.$ === 'Ok') {
+			var resume = msg.a.a;
 			return _Utils_Tuple2(
 				_Utils_update(
 					model,
 					{resume: resume}),
 				$elm$core$Platform$Cmd$none);
 		} else {
-			var err = result.a;
+			var err = msg.a.a;
 			return _Utils_Tuple2(model, $elm$core$Platform$Cmd$none);
 		}
 	});
@@ -11375,19 +11374,29 @@ var $author$project$Main$projectView = function (project) {
 var $author$project$Main$skillView = function (skill) {
 	return A2(
 		$elm$html$Html$div,
-		_List_Nil,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('resume__skill-item')
+			]),
 		_List_fromArray(
 			[
 				A2(
 				$elm$html$Html$p,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__skill-name'),
+						$elm$html$Html$Attributes$class('font-semibold')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text(skill.name)
 					])),
 				A2(
 				$elm$html$Html$ul,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__skill-list')
+					]),
 				A2(
 					$elm$core$List$map,
 					function (keyword) {
@@ -11518,7 +11527,10 @@ var $author$project$Main$view = function (model) {
 					$elm$core$List$cons,
 					A2(
 						$elm$html$Html$h2,
-						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('text-2xl')
+							]),
 						_List_fromArray(
 							[
 								$elm$html$Html$text('Skills')
