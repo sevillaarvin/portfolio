@@ -51,42 +51,64 @@
 
 .resume__sheet {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, min-content);
-    grid-template-areas: "name contact"
-                         "experience experience"
-                         "skill skill"
-                         "project project"
-                         "education education"
-                         "award award";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, min-content);
+    grid-template-areas: "name"
+                         "experience"
+                         "skill"
+                         "project"
+                         "education"
+                         "award"
+                         "contact";
+    grid-gap: 1.6rem;
+}
+
+@media (min-width: 768px) {
+    .resume__sheet {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, min-content);
+        grid-template-areas: "name contact"
+                             "experience experience"
+                             "skill skill"
+                             "project project"
+                             "education education"
+                             "award award";
+    }
 }
 
 .resume__name {
     grid-area: name;
+    background-color: orange;
 }
 
 .resume__contact {
     grid-area: contact;
+    background-color: yellow;
 }
 
 .resume__experience {
     grid-area: experience;
+    background-color: green;
 }
 
 .resume__skill {
     grid-area: skill;
+    background-color: blue;
 }
 
 .resume__project {
     grid-area: project;
+    background-color: indigo;
 }
 
 .resume__education {
     grid-area: education;
+    background-color: violet;
 }
 
 .resume__award {
     grid-area: award;
+    background-color: pink;
 }
 
 .resume__close {
