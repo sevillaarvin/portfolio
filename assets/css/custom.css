@@ -163,6 +163,10 @@
     background-color: violet;
 }
 
+.resume__education-history {
+    @apply my-2;
+}
+
 .resume__award {
     grid-area: award;
     background-color: pink;

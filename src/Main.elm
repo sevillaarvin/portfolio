@@ -204,7 +204,7 @@ view model =
         , div [ class "resume__experience" ] (h2 [ class "text-2xl" ] [ text "Experience" ] :: List.map experienceView resume.experiences)
         , div [ class "resume__skill" ] (h2 [ class "text-2xl" ] [ text "Skills" ] :: List.map skillView resume.skills)
         , div [ class "resume__project" ] (h2 [ class "text-2xl" ] [ text "Projects" ] :: List.map projectView resume.projects)
-        , div [ class "resume__education" ] (h2 [] [ text "Education" ] :: List.map educationView resume.education)
+        , div [ class "resume__education" ] (h2 [ class "text-2xl" ] [ text "Education" ] :: List.map educationView resume.education)
         , div [ class "resume__award" ] (h2 [] [ text "Awards" ] :: List.map awardView resume.awards)
         ]
 
@@ -212,7 +212,7 @@ view model =
 experienceView : Experience -> Html msg
 experienceView experience =
     div [ class "resume__experience-history" ]
-        [ h2 [ class "resume__experience-company", class "font-semibold" ] [ text experience.company ]
+        [ h3 [ class "resume__experience-company", class "font-semibold" ] [ text experience.company ]
         , p [ class "resume__experience-position" ] [ text experience.position ]
         , p [ class "resume__experience-location" ] [ text experience.location ]
         , p [ class "resume__experience-date" ] [ text (experience.start ++ " - " ++ experience.end) ]
@@ -228,7 +228,7 @@ highlightView highlight =
 skillView : Skill -> Html msg
 skillView skill =
     div [ class "resume__skill-item" ]
-        [ h2 [ class "resume__skill-name", class "font-semibold" ] [ text skill.name ]
+        [ h3 [ class "resume__skill-name", class "font-semibold" ] [ text skill.name ]
         , ul [ class "resume__skill-list" ] (List.map (\keyword -> li [] [ text keyword ]) skill.keywords)
         ]
 
@@ -236,7 +236,7 @@ skillView skill =
 projectView : Project -> Html msg
 projectView project =
     div [ class "resume__project-item" ]
-        [ h2 [ class "resume__project-name", class "font-semibold" ] [ text project.name ]
+        [ h3 [ class "resume__project-name", class "font-semibold" ] [ text project.name ]
         , p [ class "resume__project-description" ] [ text project.description ]
         , ul [ class "resume__project-keywords" ] (List.map (\keyword -> li [] [ text keyword ]) project.keywords)
         , p [ class "resume__project-url" ] [ text project.url ]
@@ -253,13 +253,27 @@ educationView education =
 
                 Nothing ->
                     0
+
+        course =
+            if education.studyType == "" then
+                education.area
+
+            else
+                education.studyType ++ " " ++ education.area
     in
-    div []
-        [ p [] [ text education.institution ]
+    div [ class "resume__education-history" ]
+        [ h3 [ class "resume__education-institution", class "font-semibold" ] [ text education.institution ]
         , p [] [ text education.location ]
-        , p [] [ text education.studyType ]
-        , p [] [ text education.area ]
-        , p [] [ text (String.fromFloat gpa) ]
+        , p [] [ text course ]
+        , p []
+            [ text
+                (if gpa == 0 then
+                    "-"
+
+                 else
+                    String.fromFloat gpa
+                )
+            ]
         , p [] [ text (education.start ++ " - " ++ education.end) ]
         ]
 

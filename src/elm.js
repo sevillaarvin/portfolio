@@ -6366,6 +6366,7 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$core$String$fromFloat = _String_fromNumber;
+var $elm$html$Html$h3 = _VirtualDom_node('h3');
 var $author$project$Main$educationView = function (education) {
 	var gpa = function () {
 		var _v0 = education.gpa;
@@ -6376,14 +6377,22 @@ var $author$project$Main$educationView = function (education) {
 			return 0;
 		}
 	}();
+	var course = (education.studyType === '') ? education.area : (education.studyType + (' ' + education.area));
 	return A2(
 		$elm$html$Html$div,
-		_List_Nil,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('resume__education-history')
+			]),
 		_List_fromArray(
 			[
 				A2(
-				$elm$html$Html$p,
-				_List_Nil,
+				$elm$html$Html$h3,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__education-institution'),
+						$elm$html$Html$Attributes$class('font-semibold')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text(education.institution)
@@ -6400,14 +6409,7 @@ var $author$project$Main$educationView = function (education) {
 				_List_Nil,
 				_List_fromArray(
 					[
-						$elm$html$Html$text(education.studyType)
-					])),
-				A2(
-				$elm$html$Html$p,
-				_List_Nil,
-				_List_fromArray(
-					[
-						$elm$html$Html$text(education.area)
+						$elm$html$Html$text(course)
 					])),
 				A2(
 				$elm$html$Html$p,
@@ -6415,7 +6417,7 @@ var $author$project$Main$educationView = function (education) {
 				_List_fromArray(
 					[
 						$elm$html$Html$text(
-						$elm$core$String$fromFloat(gpa))
+						(!gpa) ? '-' : $elm$core$String$fromFloat(gpa))
 					])),
 				A2(
 				$elm$html$Html$p,
@@ -6426,7 +6428,6 @@ var $author$project$Main$educationView = function (education) {
 					]))
 			]));
 };
-var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $elm$html$Html$li = _VirtualDom_node('li');
 var $author$project$Main$highlightView = function (highlight) {
 	return A2(
@@ -6448,7 +6449,7 @@ var $author$project$Main$experienceView = function (experience) {
 		_List_fromArray(
 			[
 				A2(
-				$elm$html$Html$h2,
+				$elm$html$Html$h3,
 				_List_fromArray(
 					[
 						$elm$html$Html$Attributes$class('resume__experience-company'),
@@ -6498,6 +6499,7 @@ var $author$project$Main$experienceView = function (experience) {
 			]));
 };
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
+var $elm$html$Html$h2 = _VirtualDom_node('h2');
 var $elm$html$Html$Attributes$href = function (url) {
 	return A2(
 		$elm$html$Html$Attributes$stringProperty,
@@ -6514,7 +6516,7 @@ var $author$project$Main$projectView = function (project) {
 		_List_fromArray(
 			[
 				A2(
-				$elm$html$Html$h2,
+				$elm$html$Html$h3,
 				_List_fromArray(
 					[
 						$elm$html$Html$Attributes$class('resume__project-name'),
@@ -6574,7 +6576,7 @@ var $author$project$Main$skillView = function (skill) {
 		_List_fromArray(
 			[
 				A2(
-				$elm$html$Html$h2,
+				$elm$html$Html$h3,
 				_List_fromArray(
 					[
 						$elm$html$Html$Attributes$class('resume__skill-name'),
@@ -6758,7 +6760,10 @@ var $author$project$Main$view = function (model) {
 					$elm$core$List$cons,
 					A2(
 						$elm$html$Html$h2,
-						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('text-2xl')
+							]),
 						_List_fromArray(
 							[
 								$elm$html$Html$text('Education')
