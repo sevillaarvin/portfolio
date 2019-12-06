@@ -144,12 +144,18 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
-@media (min-width: 768px) {
-}
-
 .resume__project {
     grid-area: project;
     background-color: indigo;
+}
+
+.resume__project-item {
+    @apply my-2;
+}
+
+.resume__project-keywords {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .resume__education {
