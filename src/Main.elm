@@ -1,10 +1,10 @@
 module Main exposing (..)
 
 import Browser
-import Html exposing (Html, div, h1, h2, li, p, span, text, ul)
-import Html.Attributes exposing (class)
+import Html exposing (Html, a, div, h1, h2, li, p, text, ul)
+import Html.Attributes exposing (class, href)
 import Http
-import Json.Decode as Decode exposing (Decoder, Value, fail, field, float, list, maybe, string, succeed)
+import Json.Decode as Decode exposing (Decoder, Value, field, list, string, succeed)
 import Json.Decode.Pipeline exposing (optional, required)
 
 
@@ -80,7 +80,7 @@ type alias Award =
 
 resumeDecoder : Decoder Resume
 resumeDecoder =
-    Decode.succeed Resume
+    succeed Resume
         |> required "basics" (field "name" string)
         |> required "basics" (field "phone" string)
         |> required "basics" (field "email" string)
@@ -94,7 +94,7 @@ resumeDecoder =
 
 experienceDecoder : Decoder Experience
 experienceDecoder =
-    Decode.succeed Experience
+    succeed Experience
         |> required "company" string
         |> required "position" string
         |> required "location" string
@@ -105,14 +105,14 @@ experienceDecoder =
 
 skillDecoder : Decoder Skill
 skillDecoder =
-    Decode.succeed Skill
+    succeed Skill
         |> required "name" string
         |> required "keywords" (list string)
 
 
 projectDecoder : Decoder Project
 projectDecoder =
-    Decode.succeed Project
+    succeed Project
         |> required "name" string
         |> required "description" string
         |> required "keywords" (list string)
@@ -121,7 +121,7 @@ projectDecoder =
 
 educationDecoder : Decoder Education
 educationDecoder =
-    Decode.succeed Education
+    succeed Education
         |> required "institution" string
         |> required "location" string
         |> required "studyType" string
@@ -133,7 +133,7 @@ educationDecoder =
 
 awardDecoder : Decoder Award
 awardDecoder =
-    Decode.succeed Award
+    succeed Award
         |> required "title" string
         |> required "summary" string
         |> required "awarder" string
@@ -187,15 +187,23 @@ view model =
             model.resume
     in
     div [ class "resume__sheet" ]
-        [ div [ class "resume__name" ] [ h1 [] [ text resume.name ] ]
+        [ div [ class "resume__name" ]
+            [ h1 [ class "text-4xl", class "text-center" ] [ text resume.name ]
+            ]
         , div [ class "resume__contact" ]
-            [ div []
+            [ div [ class "text-center" ]
                 [ p [] [ text resume.phone ]
-                , p [] [ text resume.email ]
-                , p [] [ text resume.website ]
+                , p []
+                    [ a [ href ("mailto:" ++ resume.email) ] [ text resume.email ]
+                    ]
+                , p []
+                    [ a [ href resume.website ]
+                        [ text resume.website
+                        ]
+                    ]
                 ]
             ]
-        , div [ class "resume__experience" ] (h2 [] [ text "Experience" ] :: List.map experienceView resume.experiences)
+        , div [ class "resume__experience" ] (h2 [ class "text-2xl" ] [ text "Experience" ] :: List.map experienceView resume.experiences)
         , div [ class "resume__skill" ] (h2 [] [ text "Skills" ] :: List.map skillView resume.skills)
         , div [ class "resume__project" ] (h2 [] [ text "Projects" ] :: List.map projectView resume.projects)
         , div [ class "resume__education" ] (h2 [] [ text "Education" ] :: List.map educationView resume.education)
@@ -205,13 +213,18 @@ view model =
 
 experienceView : Experience -> Html msg
 experienceView experience =
-    div []
-        [ p [] [ text experience.company ]
-        , p [] [ text experience.position ]
-        , p [] [ text experience.location ]
-        , p [] [ text (experience.start ++ " - " ++ experience.end) ]
-        , ul [] (List.map (\highlight -> li [] [ text highlight ]) experience.highlights)
+    div [ class "resume__experience-history" ]
+        [ p [ class "resume__experience-company", class "font-semibold" ] [ text experience.company ]
+        , p [ class "resume__experience-position" ] [ text experience.position ]
+        , p [ class "resume__experience-location" ] [ text experience.location ]
+        , p [ class "resume__experience-date" ] [ text (experience.start ++ " - " ++ experience.end) ]
+        , ul [ class "resume__experience-highlights" ] (List.map highlightView experience.highlights)
         ]
+
+
+highlightView : String -> Html msg
+highlightView highlight =
+    li [] [ text highlight ]
 
 
 skillView : Skill -> Html msg

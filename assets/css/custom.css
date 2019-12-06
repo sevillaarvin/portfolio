@@ -41,7 +41,7 @@
     @apply top-0;
     @apply left-0;
     @apply w-full;
-    @apply h-full;
+    @apply min-h-full;
     @apply opacity-0;
     @apply invisible;
     @apply z-30;
@@ -89,6 +89,45 @@
 .resume__experience {
     grid-area: experience;
     background-color: green;
+}
+
+.resume__experience-history {
+    @apply my-2;
+}
+
+@media (min-width: 768px) {
+    .resume__experience-history {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, min-content);
+        grid-template-areas: "company location"
+                             "position date"
+                             "highlights highlights";
+    }
+
+    .resume__experience-header {
+        grid-area: header;
+    }
+
+    .resume__experience-company {
+        grid-area: company;
+    }
+
+    .resume__experience-position {
+        grid-area: position;
+    }
+
+    .resume__experience-location {
+        grid-area: location;
+    }
+
+    .resume__experience-date {
+        grid-area: date;
+    }
+
+    .resume__experience-highlights {
+        grid-area: highlights;
+    }
 }
 
 .resume__skill {

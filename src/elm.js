@@ -11258,55 +11258,72 @@ var $author$project$Main$educationView = function (education) {
 					]))
 			]));
 };
+var $author$project$Main$highlightView = function (highlight) {
+	return A2(
+		$elm$html$Html$li,
+		_List_Nil,
+		_List_fromArray(
+			[
+				$elm$html$Html$text(highlight)
+			]));
+};
 var $author$project$Main$experienceView = function (experience) {
 	return A2(
 		$elm$html$Html$div,
-		_List_Nil,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('resume__experience-history')
+			]),
 		_List_fromArray(
 			[
 				A2(
 				$elm$html$Html$p,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__experience-company'),
+						$elm$html$Html$Attributes$class('font-semibold')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text(experience.company)
 					])),
 				A2(
 				$elm$html$Html$p,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__experience-position')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text(experience.position)
 					])),
 				A2(
 				$elm$html$Html$p,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__experience-location')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text(experience.location)
 					])),
 				A2(
 				$elm$html$Html$p,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__experience-date')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text(experience.start + (' - ' + experience.end))
 					])),
 				A2(
 				$elm$html$Html$ul,
-				_List_Nil,
-				A2(
-					$elm$core$List$map,
-					function (highlight) {
-						return A2(
-							$elm$html$Html$li,
-							_List_Nil,
-							_List_fromArray(
-								[
-									$elm$html$Html$text(highlight)
-								]));
-					},
-					experience.highlights))
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__experience-highlights')
+					]),
+				A2($elm$core$List$map, $author$project$Main$highlightView, experience.highlights))
 			]));
 };
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
@@ -11405,7 +11422,11 @@ var $author$project$Main$view = function (model) {
 					[
 						A2(
 						$elm$html$Html$h1,
-						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('text-4xl'),
+								$elm$html$Html$Attributes$class('text-center')
+							]),
 						_List_fromArray(
 							[
 								$elm$html$Html$text(resume.name)
@@ -11421,7 +11442,10 @@ var $author$project$Main$view = function (model) {
 					[
 						A2(
 						$elm$html$Html$div,
-						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('text-center')
+							]),
 						_List_fromArray(
 							[
 								A2(
@@ -11436,14 +11460,32 @@ var $author$project$Main$view = function (model) {
 								_List_Nil,
 								_List_fromArray(
 									[
-										$elm$html$Html$text(resume.email)
+										A2(
+										$elm$html$Html$a,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$href('mailto:' + resume.email)
+											]),
+										_List_fromArray(
+											[
+												$elm$html$Html$text(resume.email)
+											]))
 									])),
 								A2(
 								$elm$html$Html$p,
 								_List_Nil,
 								_List_fromArray(
 									[
-										$elm$html$Html$text(resume.website)
+										A2(
+										$elm$html$Html$a,
+										_List_fromArray(
+											[
+												$elm$html$Html$Attributes$href(resume.website)
+											]),
+										_List_fromArray(
+											[
+												$elm$html$Html$text(resume.website)
+											]))
 									]))
 							]))
 					])),
@@ -11457,7 +11499,10 @@ var $author$project$Main$view = function (model) {
 					$elm$core$List$cons,
 					A2(
 						$elm$html$Html$h2,
-						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('text-2xl')
+							]),
 						_List_fromArray(
 							[
 								$elm$html$Html$text('Experience')
