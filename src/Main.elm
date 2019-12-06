@@ -205,7 +205,7 @@ view model =
         , div [ class "resume__skill" ] (h2 [ class "text-2xl" ] [ text "Skills" ] :: List.map skillView resume.skills)
         , div [ class "resume__project" ] (h2 [ class "text-2xl" ] [ text "Projects" ] :: List.map projectView resume.projects)
         , div [ class "resume__education" ] (h2 [ class "text-2xl" ] [ text "Education" ] :: List.map educationView resume.education)
-        , div [ class "resume__award" ] (h2 [] [ text "Awards" ] :: List.map awardView resume.awards)
+        , div [ class "resume__award" ] (h2 [ class "text-2xl" ] [ text "Awards" ] :: List.map awardView resume.awards)
         ]
 
 
@@ -280,8 +280,8 @@ educationView education =
 
 awardView : Award -> Html msg
 awardView award =
-    div []
-        [ p [] [ text award.title ]
+    div [ class "resume__award-history" ]
+        [ h3 [ class "font-semibold" ] [ text award.title ]
         , p [] [ text award.summary ]
         , p [] [ text award.awarder ]
         , p [] [ text award.date ]

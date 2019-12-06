@@ -45,7 +45,7 @@
     @apply opacity-0;
     @apply invisible;
     @apply z-30;
-    @apply p-8;
+    @apply p-4;
     background: indianred;
 }
 
@@ -60,7 +60,7 @@
                          "education"
                          "award"
                          "contact";
-    grid-gap: 1.6rem;
+    grid-gap: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -170,6 +170,10 @@
 .resume__award {
     grid-area: award;
     background-color: pink;
+}
+
+.resume__award-history {
+    @apply my-2;
 }
 
 .resume__close {

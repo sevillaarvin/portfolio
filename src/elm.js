@@ -6316,19 +6316,35 @@ var $author$project$Main$update = F2(
 		}
 	});
 var $elm$html$Html$a = _VirtualDom_node('a');
+var $elm$json$Json$Encode$string = _Json_wrap;
+var $elm$html$Html$Attributes$stringProperty = F2(
+	function (key, string) {
+		return A2(
+			_VirtualDom_property,
+			key,
+			$elm$json$Json$Encode$string(string));
+	});
+var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$div = _VirtualDom_node('div');
+var $elm$html$Html$h3 = _VirtualDom_node('h3');
 var $elm$html$Html$p = _VirtualDom_node('p');
 var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $author$project$Main$awardView = function (award) {
 	return A2(
 		$elm$html$Html$div,
-		_List_Nil,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('resume__award-history')
+			]),
 		_List_fromArray(
 			[
 				A2(
-				$elm$html$Html$p,
-				_List_Nil,
+				$elm$html$Html$h3,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('font-semibold')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text(award.title)
@@ -6356,17 +6372,7 @@ var $author$project$Main$awardView = function (award) {
 					]))
 			]));
 };
-var $elm$json$Json$Encode$string = _Json_wrap;
-var $elm$html$Html$Attributes$stringProperty = F2(
-	function (key, string) {
-		return A2(
-			_VirtualDom_property,
-			key,
-			$elm$json$Json$Encode$string(string));
-	});
-var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$core$String$fromFloat = _String_fromNumber;
-var $elm$html$Html$h3 = _VirtualDom_node('h3');
 var $author$project$Main$educationView = function (education) {
 	var gpa = function () {
 		var _v0 = education.gpa;
@@ -6779,7 +6785,10 @@ var $author$project$Main$view = function (model) {
 					$elm$core$List$cons,
 					A2(
 						$elm$html$Html$h2,
-						_List_Nil,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('text-2xl')
+							]),
 						_List_fromArray(
 							[
 								$elm$html$Html$text('Awards')
