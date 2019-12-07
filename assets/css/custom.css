@@ -46,7 +46,7 @@
     @apply invisible;
     @apply z-30;
     @apply p-4;
-    background: indianred;
+    background: #fff;
 }
 
 .resume__sheet {
@@ -78,21 +78,22 @@
 
 .resume__name {
     grid-area: name;
-    background-color: orange;
 }
 
 .resume__contact {
     grid-area: contact;
-    background-color: yellow;
 }
 
 .resume__experience {
     grid-area: experience;
-    background-color: green;
 }
 
 .resume__experience-history {
     @apply my-2;
+}
+
+.resume__experience-highlights {
+    @apply mt-2;
 }
 
 @media (min-width: 768px) {
@@ -119,10 +120,17 @@
 
     .resume__experience-location {
         grid-area: location;
+
+        @apply flex;
+        @apply justify-end;
+        @apply items-center;
     }
 
     .resume__experience-date {
         grid-area: date;
+
+        @apply flex;
+        @apply justify-end;
     }
 
     .resume__experience-highlights {
@@ -132,7 +140,6 @@
 
 .resume__skill {
     grid-area: skill;
-    background-color: blue;
 }
 
 .resume__skill-item {
@@ -144,9 +151,16 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
+@media (min-width: 768px) {
+    .resume__skill-list {
+        @apply mt-2;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0.2rem;
+    }
+}
+
 .resume__project {
     grid-area: project;
-    background-color: indigo;
 }
 
 .resume__project-item {
@@ -158,22 +172,71 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
+@media (min-width: 768px) {
+    .resume__project-keywords {
+        @apply my-2;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0.2rem;
+    }
+}
+
 .resume__education {
     grid-area: education;
-    background-color: violet;
 }
 
 .resume__education-history {
     @apply my-2;
 }
 
+@media (min-width: 768px) {
+    .resume__education-history {
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        grid-template-rows: repeat(2, min-content);
+        grid-template-areas: "institution location"
+                             "course date";
+    }
+
+    .resume__education-location {
+        grid-area: location;
+
+        @apply flex;
+        @apply justify-end;
+    }
+
+    .resume__education-date {
+        grid-area: date;
+
+        @apply flex;
+        @apply justify-end;
+    }
+}
+
 .resume__award {
     grid-area: award;
-    background-color: pink;
 }
 
 .resume__award-history {
     @apply my-2;
+}
+
+@media (min-width: 768px) {
+    .resume__award-history {
+        display: grid;
+        grid-template-rows: repeat(2, min-content);
+        grid-template-columns: 1fr max-content;
+        grid-gap: 1rem;
+    }
+
+    .resume__award-date {
+        @apply flex;
+        @apply justify-end;
+    }
+
+    .resume__award-awarder {
+        @apply flex;
+        @apply justify-end;
+    }
 }
 
 .resume__close {

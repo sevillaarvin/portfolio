@@ -185,11 +185,21 @@ view model =
             model.resume
     in
     div [ class "resume__sheet" ]
-        [ div [ class "resume__name" ]
-            [ h1 [ class "text-4xl", class "text-center" ] [ text resume.name ]
+        [ div
+            [ class "resume__name"
+            , class "flex"
+            , class "items-center"
+            , class "justify-center"
+            , class "md:justify-start"
+            ]
+            [ h1
+                [ class "text-4xl"
+                , class "text-center"
+                ]
+                [ text resume.name ]
             ]
         , div [ class "resume__contact" ]
-            [ div [ class "text-center" ]
+            [ div [ class "text-center", class "md:text-right" ]
                 [ p [] [ text resume.phone ]
                 , p []
                     [ a [ href ("mailto:" ++ resume.email) ] [ text resume.email ]
@@ -201,7 +211,7 @@ view model =
                     ]
                 ]
             ]
-        , div [ class "resume__experience" ] (h2 [ class "text-2xl" ] [ text "Experience" ] :: List.map experienceView resume.experiences)
+        , div [ class "resume__experience" ] (h2 [ class "text-2xl md:text-3xl" ] [ text "Experience" ] :: List.map experienceView resume.experiences)
         , div [ class "resume__skill" ] (h2 [ class "text-2xl" ] [ text "Skills" ] :: List.map skillView resume.skills)
         , div [ class "resume__project" ] (h2 [ class "text-2xl" ] [ text "Projects" ] :: List.map projectView resume.projects)
         , div [ class "resume__education" ] (h2 [ class "text-2xl" ] [ text "Education" ] :: List.map educationView resume.education)
@@ -212,8 +222,8 @@ view model =
 experienceView : Experience -> Html msg
 experienceView experience =
     div [ class "resume__experience-history" ]
-        [ h3 [ class "resume__experience-company", class "font-semibold" ] [ text experience.company ]
-        , p [ class "resume__experience-position" ] [ text experience.position ]
+        [ h3 [ class "resume__experience-company", class "font-semibold md:font-normal md:text-2xl" ] [ text experience.company ]
+        , p [ class "resume__experience-position", class "font-semibold" ] [ text experience.position ]
         , p [ class "resume__experience-location" ] [ text experience.location ]
         , p [ class "resume__experience-date" ] [ text (experience.start ++ " - " ++ experience.end) ]
         , ul [ class "resume__experience-highlights" ] (List.map highlightView experience.highlights)
@@ -263,9 +273,10 @@ educationView education =
     in
     div [ class "resume__education-history" ]
         [ h3 [ class "resume__education-institution", class "font-semibold" ] [ text education.institution ]
-        , p [] [ text education.location ]
-        , p [] [ text course ]
-        , p []
+        , p [ class "resume__education-course" ] [ text course ]
+        , p [ class "resume__education-location" ] [ text education.location ]
+        , p [ class "resume__education-date" ] [ text (education.start ++ " - " ++ education.end) ]
+        , p [ class "resume__education-gpa" ]
             [ text
                 (if gpa == 0 then
                     "-"
@@ -274,15 +285,14 @@ educationView education =
                     String.fromFloat gpa
                 )
             ]
-        , p [] [ text (education.start ++ " - " ++ education.end) ]
         ]
 
 
 awardView : Award -> Html msg
 awardView award =
     div [ class "resume__award-history" ]
-        [ h3 [ class "font-semibold" ] [ text award.title ]
-        , p [] [ text award.summary ]
-        , p [] [ text award.awarder ]
-        , p [] [ text award.date ]
+        [ h3 [ class "resume__award-title", class "font-semibold" ] [ text award.title ]
+        , p [ class "resume__award-date" ] [ text award.date ]
+        , p [ class "resume__award-summary" ] [ text award.summary ]
+        , p [ class "resume__award-awarder" ] [ text award.awarder ]
         ]

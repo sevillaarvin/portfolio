@@ -6343,6 +6343,7 @@ var $author$project$Main$awardView = function (award) {
 				$elm$html$Html$h3,
 				_List_fromArray(
 					[
+						$elm$html$Html$Attributes$class('resume__award-title'),
 						$elm$html$Html$Attributes$class('font-semibold')
 					]),
 				_List_fromArray(
@@ -6351,24 +6352,33 @@ var $author$project$Main$awardView = function (award) {
 					])),
 				A2(
 				$elm$html$Html$p,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__award-date')
+					]),
+				_List_fromArray(
+					[
+						$elm$html$Html$text(award.date)
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__award-summary')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text(award.summary)
 					])),
 				A2(
 				$elm$html$Html$p,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__award-awarder')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text(award.awarder)
-					])),
-				A2(
-				$elm$html$Html$p,
-				_List_Nil,
-				_List_fromArray(
-					[
-						$elm$html$Html$text(award.date)
 					]))
 			]));
 };
@@ -6405,32 +6415,44 @@ var $author$project$Main$educationView = function (education) {
 					])),
 				A2(
 				$elm$html$Html$p,
-				_List_Nil,
 				_List_fromArray(
 					[
-						$elm$html$Html$text(education.location)
-					])),
-				A2(
-				$elm$html$Html$p,
-				_List_Nil,
+						$elm$html$Html$Attributes$class('resume__education-course')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text(course)
 					])),
 				A2(
 				$elm$html$Html$p,
-				_List_Nil,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__education-location')
+					]),
+				_List_fromArray(
+					[
+						$elm$html$Html$text(education.location)
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__education-date')
+					]),
+				_List_fromArray(
+					[
+						$elm$html$Html$text(education.start + (' - ' + education.end))
+					])),
+				A2(
+				$elm$html$Html$p,
+				_List_fromArray(
+					[
+						$elm$html$Html$Attributes$class('resume__education-gpa')
+					]),
 				_List_fromArray(
 					[
 						$elm$html$Html$text(
 						(!gpa) ? '-' : $elm$core$String$fromFloat(gpa))
-					])),
-				A2(
-				$elm$html$Html$p,
-				_List_Nil,
-				_List_fromArray(
-					[
-						$elm$html$Html$text(education.start + (' - ' + education.end))
 					]))
 			]));
 };
@@ -6459,7 +6481,7 @@ var $author$project$Main$experienceView = function (experience) {
 				_List_fromArray(
 					[
 						$elm$html$Html$Attributes$class('resume__experience-company'),
-						$elm$html$Html$Attributes$class('font-semibold')
+						$elm$html$Html$Attributes$class('font-semibold md:font-normal md:text-2xl')
 					]),
 				_List_fromArray(
 					[
@@ -6469,7 +6491,8 @@ var $author$project$Main$experienceView = function (experience) {
 				$elm$html$Html$p,
 				_List_fromArray(
 					[
-						$elm$html$Html$Attributes$class('resume__experience-position')
+						$elm$html$Html$Attributes$class('resume__experience-position'),
+						$elm$html$Html$Attributes$class('font-semibold')
 					]),
 				_List_fromArray(
 					[
@@ -6626,7 +6649,11 @@ var $author$project$Main$view = function (model) {
 				$elm$html$Html$div,
 				_List_fromArray(
 					[
-						$elm$html$Html$Attributes$class('resume__name')
+						$elm$html$Html$Attributes$class('resume__name'),
+						$elm$html$Html$Attributes$class('flex'),
+						$elm$html$Html$Attributes$class('items-center'),
+						$elm$html$Html$Attributes$class('justify-center'),
+						$elm$html$Html$Attributes$class('md:justify-start')
 					]),
 				_List_fromArray(
 					[
@@ -6654,7 +6681,8 @@ var $author$project$Main$view = function (model) {
 						$elm$html$Html$div,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$class('text-center')
+								$elm$html$Html$Attributes$class('text-center'),
+								$elm$html$Html$Attributes$class('md:text-right')
 							]),
 						_List_fromArray(
 							[
@@ -6711,7 +6739,7 @@ var $author$project$Main$view = function (model) {
 						$elm$html$Html$h2,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$class('text-2xl')
+								$elm$html$Html$Attributes$class('text-2xl md:text-3xl')
 							]),
 						_List_fromArray(
 							[
