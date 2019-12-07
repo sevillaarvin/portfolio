@@ -6460,7 +6460,10 @@ var $elm$html$Html$li = _VirtualDom_node('li');
 var $author$project$Main$highlightView = function (highlight) {
 	return A2(
 		$elm$html$Html$li,
-		_List_Nil,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('resume__experience-highlight-item')
+			]),
 		_List_fromArray(
 			[
 				$elm$html$Html$text(highlight)
@@ -6481,7 +6484,10 @@ var $author$project$Main$experienceView = function (experience) {
 				_List_fromArray(
 					[
 						$elm$html$Html$Attributes$class('resume__experience-company'),
-						$elm$html$Html$Attributes$class('font-semibold md:font-normal md:text-2xl')
+						$elm$html$Html$Attributes$class('font-semibold'),
+						$elm$html$Html$Attributes$class('md:font-normal'),
+						$elm$html$Html$Attributes$class('text-xl'),
+						$elm$html$Html$Attributes$class('md:text-2xl')
 					]),
 				_List_fromArray(
 					[
@@ -6492,7 +6498,7 @@ var $author$project$Main$experienceView = function (experience) {
 				_List_fromArray(
 					[
 						$elm$html$Html$Attributes$class('resume__experience-position'),
-						$elm$html$Html$Attributes$class('font-semibold')
+						$elm$html$Html$Attributes$class('md:font-semibold')
 					]),
 				_List_fromArray(
 					[

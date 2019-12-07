@@ -222,8 +222,15 @@ view model =
 experienceView : Experience -> Html msg
 experienceView experience =
     div [ class "resume__experience-history" ]
-        [ h3 [ class "resume__experience-company", class "font-semibold md:font-normal md:text-2xl" ] [ text experience.company ]
-        , p [ class "resume__experience-position", class "font-semibold" ] [ text experience.position ]
+        [ h3
+            [ class "resume__experience-company"
+            , class "font-semibold"
+            , class "md:font-normal"
+            , class "text-xl"
+            , class "md:text-2xl"
+            ]
+            [ text experience.company ]
+        , p [ class "resume__experience-position", class "md:font-semibold" ] [ text experience.position ]
         , p [ class "resume__experience-location" ] [ text experience.location ]
         , p [ class "resume__experience-date" ] [ text (experience.start ++ " - " ++ experience.end) ]
         , ul [ class "resume__experience-highlights" ] (List.map highlightView experience.highlights)
@@ -232,7 +239,7 @@ experienceView experience =
 
 highlightView : String -> Html msg
 highlightView highlight =
-    li [] [ text highlight ]
+    li [ class "resume__experience-highlight-item" ] [ text highlight ]
 
 
 skillView : Skill -> Html msg
