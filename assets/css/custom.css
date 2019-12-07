@@ -41,9 +41,10 @@
     @apply top-0;
     @apply left-0;
     @apply w-full;
-    @apply min-h-full;
+    @apply h-full;
     @apply opacity-0;
     @apply invisible;
+    @apply overflow-hidden;
     @apply z-30;
     @apply p-4;
     background: #fff;
@@ -254,6 +255,7 @@
 .resume__input:checked + .resume__page {
     @apply opacity-100;
     @apply visible;
+    @apply overflow-auto;
 }
 
 .contact__input {
