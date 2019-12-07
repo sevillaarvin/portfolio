@@ -27,6 +27,12 @@
     }
 }
 
+@screen lg {
+    .resume__page {
+        @apply p-16;
+    }
+}
+
 .resume__sheet {
     display: grid;
     grid-template-columns: 1fr;
@@ -123,6 +129,14 @@
     }
 }
 
+@screen lg {
+    .resume__experience-highlights {
+        @apply my-2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 .resume__skill {
     grid-area: skill;
 }
@@ -145,6 +159,15 @@
         @apply text-center;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 0.8rem;
+    }
+}
+
+@screen lg {
+    .resume__skill-list {
+        @apply my-4;
+        @apply text-center;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1.6rem;
     }
 }
 
@@ -198,6 +221,19 @@
     }
 }
 
+@screen lg {
+    .resume__project-item {
+        grid-gap: 0.8rem;
+        @apply my-8;
+    }
+
+    .resume__project-keywords {
+        @apply my-0;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1.6rem;
+    }
+}
+
 .resume__education {
     grid-area: education;
 }
@@ -230,6 +266,13 @@
     }
 }
 
+@screen lg {
+    .resume__education-history {
+        @apply my-4;
+        grid-gap: 0.4rem;
+    }
+}
+
 .resume__award {
     grid-area: award;
 }
@@ -253,6 +296,13 @@
     .resume__award-awarder {
         @apply flex;
         @apply justify-end;
+    }
+}
+
+@screen lg {
+    .resume__award-history {
+        @apply my-4;
+        grid-gap: 0.4rem;
     }
 }
 
