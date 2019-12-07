@@ -50,21 +50,27 @@
     background: #fff;
 }
 
+@screen md {
+    .resume__page {
+        @apply p-12;
+    }
+}
+
 .resume__sheet {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(7, min-content);
     grid-template-areas: "name"
+                         "contact"
                          "experience"
                          "skill"
                          "project"
                          "education"
-                         "award"
-                         "contact";
-    grid-gap: 1rem;
+                         "award";
+    grid-gap: 0.4rem;
 }
 
-@media (min-width: 768px) {
+@screen md {
     .resume__sheet {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(6, min-content);
@@ -74,6 +80,7 @@
                              "project project"
                              "education education"
                              "award award";
+        grid-gap: 1.6rem;
     }
 }
 
@@ -97,14 +104,15 @@
     @apply mt-2;
 }
 
-@media (min-width: 768px) {
+@screen md {
     .resume__experience-history {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, min-content);
+        grid-template-columns: 1fr max-content;
         grid-template-areas: "company location"
                              "position date"
                              "highlights highlights";
+        grid-gap: 0.2rem;
     }
 
     .resume__experience-header {
@@ -136,6 +144,7 @@
 
     .resume__experience-highlights {
         grid-area: highlights;
+        @apply mt-0;
     }
 }
 
@@ -152,11 +161,12 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
-@media (min-width: 768px) {
+@screen md {
     .resume__skill-list {
-        @apply mt-2;
+        @apply my-4;
+        @apply text-center;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 0.2rem;
+        grid-gap: 0.8rem;
     }
 }
 
@@ -173,11 +183,37 @@
     grid-template-columns: repeat(2, 1fr);
 }
 
-@media (min-width: 768px) {
+@screen md {
+    .resume__project-item {
+        display: grid;
+        grid-template-rows: repeat(3, min-content);
+        grid-template-columns: minmax(min-content, 1fr) 3fr;
+        grid-template-areas: "name description"
+                             "keywords keywords"
+                             "url url";
+        grid-gap: 0.4rem;
+        @apply my-4;
+    }
+
+    .resume__project-name {
+        grid-area: name;
+    }
+
+    .resume__project-description {
+        grid-area: description;
+    }
+
     .resume__project-keywords {
         @apply my-2;
+        @apply text-center;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 0.2rem;
+        grid-gap: 0.8rem;
+
+        grid-area: keywords;
+    }
+
+    .resume__project-url {
+        grid-area: url;
     }
 }
 
@@ -189,7 +225,7 @@
     @apply my-2;
 }
 
-@media (min-width: 768px) {
+@screen md {
     .resume__education-history {
         display: grid;
         grid-template-columns: 1fr max-content;
@@ -221,12 +257,11 @@
     @apply my-2;
 }
 
-@media (min-width: 768px) {
+@screen md {
     .resume__award-history {
         display: grid;
         grid-template-rows: repeat(2, min-content);
         grid-template-columns: 1fr max-content;
-        grid-gap: 1rem;
     }
 
     .resume__award-date {

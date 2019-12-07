@@ -249,7 +249,9 @@ projectView project =
         [ h3 [ class "resume__project-name", class "font-semibold" ] [ text project.name ]
         , p [ class "resume__project-description" ] [ text project.description ]
         , ul [ class "resume__project-keywords" ] (List.map (\keyword -> li [] [ text keyword ]) project.keywords)
-        , p [ class "resume__project-url" ] [ text project.url ]
+        , p [ class "resume__project-url" ]
+            [ a [ href project.url, class "italic" ] [ text project.url ]
+            ]
         ]
 
 

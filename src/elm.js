@@ -6591,7 +6591,17 @@ var $author$project$Main$projectView = function (project) {
 					]),
 				_List_fromArray(
 					[
-						$elm$html$Html$text(project.url)
+						A2(
+						$elm$html$Html$a,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$href(project.url),
+								$elm$html$Html$Attributes$class('italic')
+							]),
+						_List_fromArray(
+							[
+								$elm$html$Html$text(project.url)
+							]))
 					]))
 			]));
 };
