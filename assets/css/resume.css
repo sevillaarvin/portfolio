@@ -33,6 +33,12 @@
     }
 }
 
+@screen xl {
+    .resume__page {
+        @apply p-20;
+    }
+}
+
 .resume__sheet {
     display: grid;
     grid-template-columns: 1fr;
@@ -58,6 +64,13 @@
                              "education education"
                              "award award";
         grid-gap: 1.6rem;
+    }
+}
+
+@screen xl {
+    .resume__sheet {
+        @apply m-auto;
+        max-width: 64rem;
     }
 }
 
@@ -171,6 +184,12 @@
     }
 }
 
+@screen xl {
+    .resume__skill-list {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
 .resume__project {
     grid-area: project;
 }
@@ -234,6 +253,12 @@
     }
 }
 
+@screen xl {
+    .resume__project-keywords {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
 .resume__education {
     grid-area: education;
 }
@@ -273,6 +298,31 @@
     }
 }
 
+@screen xl {
+    .resume__education {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0.4rem;
+    }
+
+    .resume__education-title {
+        grid-column: 1 / -1;
+    }
+
+    .resume__education-history {
+        @apply block;
+        @apply text-center;
+    }
+
+    .resume__education-location {
+        @apply block;
+    }
+
+    .resume__education-date {
+        @apply block;
+    }
+}
+
 .resume__award {
     grid-area: award;
 }
@@ -303,6 +353,31 @@
     .resume__award-history {
         @apply my-4;
         grid-gap: 0.4rem;
+    }
+}
+
+@screen xl {
+    .resume__award {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0.4rem;
+    }
+
+    .resume__award-header {
+        grid-column: 1 / -1;
+    }
+
+    .resume__award-history {
+        @apply block;
+        @apply text-center;
+    }
+
+    .resume__award-date {
+        @apply block;
+    }
+
+    .resume__award-awarder {
+        @apply block;
     }
 }
 

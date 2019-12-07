@@ -6667,7 +6667,7 @@ var $author$project$Main$view = function (model) {
 					[
 						$elm$html$Html$Attributes$class('resume__name'),
 						$elm$html$Html$Attributes$class('flex'),
-						$elm$html$Html$Attributes$class('items-center'),
+						$elm$html$Html$Attributes$class('items-start'),
 						$elm$html$Html$Attributes$class('justify-center'),
 						$elm$html$Html$Attributes$class('md:justify-start')
 					]),
@@ -6812,7 +6812,8 @@ var $author$project$Main$view = function (model) {
 						$elm$html$Html$h2,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$class('text-2xl')
+								$elm$html$Html$Attributes$class('text-2xl'),
+								$elm$html$Html$Attributes$class('resume__education-title')
 							]),
 						_List_fromArray(
 							[
@@ -6831,7 +6832,8 @@ var $author$project$Main$view = function (model) {
 						$elm$html$Html$h2,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$class('text-2xl')
+								$elm$html$Html$Attributes$class('text-2xl'),
+								$elm$html$Html$Attributes$class('resume__award-header')
 							]),
 						_List_fromArray(
 							[

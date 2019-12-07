@@ -188,7 +188,7 @@ view model =
         [ div
             [ class "resume__name"
             , class "flex"
-            , class "items-center"
+            , class "items-start"
             , class "justify-center"
             , class "md:justify-start"
             ]
@@ -198,7 +198,9 @@ view model =
                 ]
                 [ text resume.name ]
             ]
-        , div [ class "resume__contact" ]
+        , div
+            [ class "resume__contact"
+            ]
             [ div [ class "text-center", class "md:text-right" ]
                 [ p [] [ text resume.phone ]
                 , p []
@@ -214,8 +216,22 @@ view model =
         , div [ class "resume__experience" ] (h2 [ class "text-2xl md:text-3xl" ] [ text "Experience" ] :: List.map experienceView resume.experiences)
         , div [ class "resume__skill" ] (h2 [ class "text-2xl" ] [ text "Skills" ] :: List.map skillView resume.skills)
         , div [ class "resume__project" ] (h2 [ class "text-2xl" ] [ text "Projects" ] :: List.map projectView resume.projects)
-        , div [ class "resume__education" ] (h2 [ class "text-2xl" ] [ text "Education" ] :: List.map educationView resume.education)
-        , div [ class "resume__award" ] (h2 [ class "text-2xl" ] [ text "Awards" ] :: List.map awardView resume.awards)
+        , div [ class "resume__education" ]
+            (h2
+                [ class "text-2xl"
+                , class "resume__education-title"
+                ]
+                [ text "Education" ]
+                :: List.map educationView resume.education
+            )
+        , div [ class "resume__award" ]
+            (h2
+                [ class "text-2xl"
+                , class "resume__award-header"
+                ]
+                [ text "Awards" ]
+                :: List.map awardView resume.awards
+            )
         ]
 
 

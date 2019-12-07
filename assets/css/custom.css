@@ -1,3 +1,9 @@
+@screen xl {
+    html {
+        font-size: 125%;
+    }
+}
+
 .transition-3 {
     transition: all 0.3s;
 }
