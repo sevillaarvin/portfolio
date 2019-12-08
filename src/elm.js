@@ -6456,7 +6456,18 @@ var $author$project$Main$educationView = function (education) {
 					]))
 			]));
 };
+var $elm$svg$Svg$Attributes$class = _VirtualDom_attribute('class');
 var $elm$html$Html$li = _VirtualDom_node('li');
+var $elm$svg$Svg$trustedNode = _VirtualDom_nodeNS('http://www.w3.org/2000/svg');
+var $elm$svg$Svg$svg = $elm$svg$Svg$trustedNode('svg');
+var $elm$svg$Svg$use = $elm$svg$Svg$trustedNode('use');
+var $elm$svg$Svg$Attributes$xlinkHref = function (value) {
+	return A3(
+		_VirtualDom_attributeNS,
+		'http://www.w3.org/1999/xlink',
+		'xlink:href',
+		_VirtualDom_noJavaScriptUri(value));
+};
 var $author$project$Main$highlightView = function (highlight) {
 	return A2(
 		$elm$html$Html$li,
@@ -6466,6 +6477,22 @@ var $author$project$Main$highlightView = function (highlight) {
 			]),
 		_List_fromArray(
 			[
+				A2(
+				$elm$svg$Svg$svg,
+				_List_fromArray(
+					[
+						$elm$svg$Svg$Attributes$class('resume__experience-highlight-icon')
+					]),
+				_List_fromArray(
+					[
+						A2(
+						$elm$svg$Svg$use,
+						_List_fromArray(
+							[
+								$elm$svg$Svg$Attributes$xlinkHref('/assets/images/sprite.svg#icon-check')
+							]),
+						_List_Nil)
+					])),
 				$elm$html$Html$text(highlight)
 			]));
 };
@@ -6755,6 +6782,7 @@ var $author$project$Main$view = function (model) {
 						$elm$html$Html$h2,
 						_List_fromArray(
 							[
+								$elm$html$Html$Attributes$class('resume__subtitle'),
 								$elm$html$Html$Attributes$class('text-2xl md:text-3xl')
 							]),
 						_List_fromArray(
@@ -6774,6 +6802,7 @@ var $author$project$Main$view = function (model) {
 						$elm$html$Html$h2,
 						_List_fromArray(
 							[
+								$elm$html$Html$Attributes$class('resume__subtitle'),
 								$elm$html$Html$Attributes$class('text-2xl')
 							]),
 						_List_fromArray(
@@ -6793,6 +6822,7 @@ var $author$project$Main$view = function (model) {
 						$elm$html$Html$h2,
 						_List_fromArray(
 							[
+								$elm$html$Html$Attributes$class('resume__subtitle'),
 								$elm$html$Html$Attributes$class('text-2xl')
 							]),
 						_List_fromArray(
@@ -6812,6 +6842,7 @@ var $author$project$Main$view = function (model) {
 						$elm$html$Html$h2,
 						_List_fromArray(
 							[
+								$elm$html$Html$Attributes$class('resume__subtitle'),
 								$elm$html$Html$Attributes$class('text-2xl'),
 								$elm$html$Html$Attributes$class('resume__education-title')
 							]),
@@ -6832,6 +6863,7 @@ var $author$project$Main$view = function (model) {
 						$elm$html$Html$h2,
 						_List_fromArray(
 							[
+								$elm$html$Html$Attributes$class('resume__subtitle'),
 								$elm$html$Html$Attributes$class('text-2xl'),
 								$elm$html$Html$Attributes$class('resume__award-header')
 							]),

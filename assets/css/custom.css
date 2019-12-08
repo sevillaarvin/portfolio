@@ -1,3 +1,9 @@
+:root {
+    --color-primary: #fe3333;
+    --color-secondary: #33fefe;
+    --color-accent: #fe9933;
+}
+
 @screen xl {
     html {
         font-size: 125%;

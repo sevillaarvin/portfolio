@@ -74,6 +74,10 @@
     }
 }
 
+.resume__subtitle {
+    color: var(--color-primary);
+}
+
 .resume__name {
     grid-area: name;
 }
@@ -86,16 +90,37 @@
     grid-area: experience;
 }
 
-.resume__experience-history {
-    @apply my-2;
+.resume__experience-history:not(:last-child) {
+    @apply mb-4;
 }
 
 .resume__experience-highlights {
     @apply mt-2;
 }
 
+.resume__experience-highlight-item {
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    grid-gap: 0.2rem;
+    @apply items-center;
+}
+
 .resume__experience-highlight-item:not(:last-child) {
     @apply mb-1;
+}
+
+.resume__experience-highlight-icon {
+    fill: var(--color-accent);
+    width: 1rem;
+    height: 1rem;
+}
+
+.resume__experience-location {
+    @apply text-sm;
+}
+
+.resume__experience-date {
+    @apply text-sm;
 }
 
 @screen md {
@@ -140,6 +165,10 @@
         grid-area: highlights;
         @apply mt-0;
     }
+
+    .resume__experience-highlight-item {
+        grid-gap: 0.4rem;
+    }
 }
 
 @screen lg {
@@ -180,7 +209,7 @@
         @apply my-4;
         @apply text-center;
         grid-template-columns: repeat(4, 1fr);
-        grid-gap: 1.6rem;
+        grid-gap: 1.2rem;
     }
 }
 
@@ -194,8 +223,8 @@
     grid-area: project;
 }
 
-.resume__project-item {
-    @apply my-2;
+.resume__project-item:not(:last-child) {
+    @apply mb-4;
 }
 
 .resume__project-keywords {
@@ -215,7 +244,6 @@
                              "keywords keywords"
                              "url url";
         grid-gap: 0.4rem;
-        @apply my-4;
     }
 
     .resume__project-name {
@@ -243,7 +271,10 @@
 @screen lg {
     .resume__project-item {
         grid-gap: 0.8rem;
-        @apply my-8;
+    }
+
+    .resume__project-item:not(:last-child) {
+        @apply mb-8;
     }
 
     .resume__project-keywords {
@@ -263,8 +294,16 @@
     grid-area: education;
 }
 
-.resume__education-history {
-    @apply my-2;
+.resume__education-history:not(:last-child) {
+    @apply mb-4;
+}
+
+.resume__education-location {
+    @apply text-sm;
+}
+
+.resume__education-date {
+    @apply text-sm;
 }
 
 @screen md {
@@ -293,8 +332,11 @@
 
 @screen lg {
     .resume__education-history {
-        @apply my-4;
         grid-gap: 0.4rem;
+    }
+
+    .resume__education-history:not(:last-child) {
+        @apply mb-8;
     }
 }
 
@@ -327,8 +369,16 @@
     grid-area: award;
 }
 
-.resume__award-history {
-    @apply my-2;
+.resume__award-history:not(:last-child) {
+    @apply mb-4;
+}
+
+.resume__award-date {
+    @apply text-sm;
+}
+
+.resume__award-awarder {
+    @apply text-sm;
 }
 
 @screen md {
@@ -351,8 +401,11 @@
 
 @screen lg {
     .resume__award-history {
-        @apply my-4;
         grid-gap: 0.4rem;
+    }
+
+    .resume__award-history:not(:last-child) {
+        @apply mb-8;
     }
 }
 
@@ -360,7 +413,7 @@
     .resume__award {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 0.4rem;
+        grid-gap: 1.6rem;
     }
 
     .resume__award-header {
@@ -368,16 +421,35 @@
     }
 
     .resume__award-history {
-        @apply block;
         @apply text-center;
+        grid-template-areas: "title"
+                             "summary"
+                             "awarder"
+                             "date";
+        grid-gap: 0;
+    }
+
+    .resume__award-history:not(:last-child) {
+        @apply mb-0;
+    }
+
+    .resume__award-title {
+        grid-area: title;
+    }
+
+    .resume__award-summary {
+        grid-area: summary;
+        @apply text-sm;
     }
 
     .resume__award-date {
         @apply block;
+        grid-area: date;
     }
 
     .resume__award-awarder {
         @apply block;
+        grid-area: awarder;
     }
 }
 

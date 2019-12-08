@@ -6,6 +6,8 @@ import Html.Attributes exposing (class, href)
 import Http
 import Json.Decode as Decode exposing (Decoder, Value, field, list, string, succeed)
 import Json.Decode.Pipeline exposing (optional, required)
+import Svg exposing (svg, use)
+import Svg.Attributes exposing (xlinkHref)
 
 
 main : Program Value Model Msg
@@ -213,12 +215,13 @@ view model =
                     ]
                 ]
             ]
-        , div [ class "resume__experience" ] (h2 [ class "text-2xl md:text-3xl" ] [ text "Experience" ] :: List.map experienceView resume.experiences)
-        , div [ class "resume__skill" ] (h2 [ class "text-2xl" ] [ text "Skills" ] :: List.map skillView resume.skills)
-        , div [ class "resume__project" ] (h2 [ class "text-2xl" ] [ text "Projects" ] :: List.map projectView resume.projects)
+        , div [ class "resume__experience" ] (h2 [ class "resume__subtitle", class "text-2xl md:text-3xl" ] [ text "Experience" ] :: List.map experienceView resume.experiences)
+        , div [ class "resume__skill" ] (h2 [ class "resume__subtitle", class "text-2xl" ] [ text "Skills" ] :: List.map skillView resume.skills)
+        , div [ class "resume__project" ] (h2 [ class "resume__subtitle", class "text-2xl" ] [ text "Projects" ] :: List.map projectView resume.projects)
         , div [ class "resume__education" ]
             (h2
-                [ class "text-2xl"
+                [ class "resume__subtitle"
+                , class "text-2xl"
                 , class "resume__education-title"
                 ]
                 [ text "Education" ]
@@ -226,7 +229,8 @@ view model =
             )
         , div [ class "resume__award" ]
             (h2
-                [ class "text-2xl"
+                [ class "resume__subtitle"
+                , class "text-2xl"
                 , class "resume__award-header"
                 ]
                 [ text "Awards" ]
@@ -255,7 +259,13 @@ experienceView experience =
 
 highlightView : String -> Html msg
 highlightView highlight =
-    li [ class "resume__experience-highlight-item" ] [ text highlight ]
+    li [ class "resume__experience-highlight-item" ]
+        [ svg
+            [ Svg.Attributes.class "resume__experience-highlight-icon" ]
+            [ use [ xlinkHref "/assets/images/sprite.svg#icon-check" ] []
+            ]
+        , text highlight
+        ]
 
 
 skillView : Skill -> Html msg
