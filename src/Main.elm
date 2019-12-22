@@ -1,4 +1,4 @@
-module Main exposing (..)
+port module Main exposing (..)
 
 import Browser
 import Html exposing (Html, a, div, h1, h2, h3, li, p, text, ul)
@@ -174,7 +174,7 @@ update : Msg -> Model -> ( Model, Cmd msg )
 update msg model =
     case msg of
         GotResume (Ok resume) ->
-            ( { model | resume = resume }, Cmd.none )
+            ( { model | resume = resume }, getResume resume )
 
         GotResume (Err err) ->
             ( model, Cmd.none )
@@ -332,3 +332,6 @@ awardView award =
         , p [ class "resume__award-summary" ] [ text award.summary ]
         , p [ class "resume__award-awarder" ] [ text award.awarder ]
         ]
+
+
+port getResume : Resume -> Cmd msg

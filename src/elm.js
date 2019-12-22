@@ -6299,6 +6299,176 @@ var $elm$core$Platform$Sub$none = $elm$core$Platform$Sub$batch(_List_Nil);
 var $author$project$Main$subscriptions = function (model) {
 	return $elm$core$Platform$Sub$none;
 };
+var $elm$core$Maybe$destruct = F3(
+	function (_default, func, maybe) {
+		if (maybe.$ === 'Just') {
+			var a = maybe.a;
+			return func(a);
+		} else {
+			return _default;
+		}
+	});
+var $elm$json$Json$Encode$float = _Json_wrap;
+var $elm$json$Json$Encode$list = F2(
+	function (func, entries) {
+		return _Json_wrap(
+			A3(
+				$elm$core$List$foldl,
+				_Json_addEntry(func),
+				_Json_emptyArray(_Utils_Tuple0),
+				entries));
+	});
+var $elm$json$Json$Encode$null = _Json_encodeNull;
+var $elm$json$Json$Encode$object = function (pairs) {
+	return _Json_wrap(
+		A3(
+			$elm$core$List$foldl,
+			F2(
+				function (_v0, obj) {
+					var k = _v0.a;
+					var v = _v0.b;
+					return A3(_Json_addField, k, v, obj);
+				}),
+			_Json_emptyObject(_Utils_Tuple0),
+			pairs));
+};
+var $elm$json$Json$Encode$string = _Json_wrap;
+var $author$project$Main$getResume = _Platform_outgoingPort(
+	'getResume',
+	function ($) {
+		return $elm$json$Json$Encode$object(
+			_List_fromArray(
+				[
+					_Utils_Tuple2(
+					'awards',
+					$elm$json$Json$Encode$list(
+						function ($) {
+							return $elm$json$Json$Encode$object(
+								_List_fromArray(
+									[
+										_Utils_Tuple2(
+										'awarder',
+										$elm$json$Json$Encode$string($.awarder)),
+										_Utils_Tuple2(
+										'date',
+										$elm$json$Json$Encode$string($.date)),
+										_Utils_Tuple2(
+										'summary',
+										$elm$json$Json$Encode$string($.summary)),
+										_Utils_Tuple2(
+										'title',
+										$elm$json$Json$Encode$string($.title))
+									]));
+						})($.awards)),
+					_Utils_Tuple2(
+					'education',
+					$elm$json$Json$Encode$list(
+						function ($) {
+							return $elm$json$Json$Encode$object(
+								_List_fromArray(
+									[
+										_Utils_Tuple2(
+										'area',
+										$elm$json$Json$Encode$string($.area)),
+										_Utils_Tuple2(
+										'end',
+										$elm$json$Json$Encode$string($.end)),
+										_Utils_Tuple2(
+										'gpa',
+										function ($) {
+											return A3($elm$core$Maybe$destruct, $elm$json$Json$Encode$null, $elm$json$Json$Encode$float, $);
+										}($.gpa)),
+										_Utils_Tuple2(
+										'institution',
+										$elm$json$Json$Encode$string($.institution)),
+										_Utils_Tuple2(
+										'location',
+										$elm$json$Json$Encode$string($.location)),
+										_Utils_Tuple2(
+										'start',
+										$elm$json$Json$Encode$string($.start)),
+										_Utils_Tuple2(
+										'studyType',
+										$elm$json$Json$Encode$string($.studyType))
+									]));
+						})($.education)),
+					_Utils_Tuple2(
+					'email',
+					$elm$json$Json$Encode$string($.email)),
+					_Utils_Tuple2(
+					'experiences',
+					$elm$json$Json$Encode$list(
+						function ($) {
+							return $elm$json$Json$Encode$object(
+								_List_fromArray(
+									[
+										_Utils_Tuple2(
+										'company',
+										$elm$json$Json$Encode$string($.company)),
+										_Utils_Tuple2(
+										'end',
+										$elm$json$Json$Encode$string($.end)),
+										_Utils_Tuple2(
+										'highlights',
+										$elm$json$Json$Encode$list($elm$json$Json$Encode$string)($.highlights)),
+										_Utils_Tuple2(
+										'location',
+										$elm$json$Json$Encode$string($.location)),
+										_Utils_Tuple2(
+										'position',
+										$elm$json$Json$Encode$string($.position)),
+										_Utils_Tuple2(
+										'start',
+										$elm$json$Json$Encode$string($.start))
+									]));
+						})($.experiences)),
+					_Utils_Tuple2(
+					'name',
+					$elm$json$Json$Encode$string($.name)),
+					_Utils_Tuple2(
+					'phone',
+					$elm$json$Json$Encode$string($.phone)),
+					_Utils_Tuple2(
+					'projects',
+					$elm$json$Json$Encode$list(
+						function ($) {
+							return $elm$json$Json$Encode$object(
+								_List_fromArray(
+									[
+										_Utils_Tuple2(
+										'description',
+										$elm$json$Json$Encode$string($.description)),
+										_Utils_Tuple2(
+										'keywords',
+										$elm$json$Json$Encode$list($elm$json$Json$Encode$string)($.keywords)),
+										_Utils_Tuple2(
+										'name',
+										$elm$json$Json$Encode$string($.name)),
+										_Utils_Tuple2(
+										'url',
+										$elm$json$Json$Encode$string($.url))
+									]));
+						})($.projects)),
+					_Utils_Tuple2(
+					'skills',
+					$elm$json$Json$Encode$list(
+						function ($) {
+							return $elm$json$Json$Encode$object(
+								_List_fromArray(
+									[
+										_Utils_Tuple2(
+										'keywords',
+										$elm$json$Json$Encode$list($elm$json$Json$Encode$string)($.keywords)),
+										_Utils_Tuple2(
+										'name',
+										$elm$json$Json$Encode$string($.name))
+									]));
+						})($.skills)),
+					_Utils_Tuple2(
+					'website',
+					$elm$json$Json$Encode$string($.website))
+				]));
+	});
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Main$update = F2(
@@ -6309,14 +6479,13 @@ var $author$project$Main$update = F2(
 				_Utils_update(
 					model,
 					{resume: resume}),
-				$elm$core$Platform$Cmd$none);
+				$author$project$Main$getResume(resume));
 		} else {
 			var err = msg.a.a;
 			return _Utils_Tuple2(model, $elm$core$Platform$Cmd$none);
 		}
 	});
 var $elm$html$Html$a = _VirtualDom_node('a');
-var $elm$json$Json$Encode$string = _Json_wrap;
 var $elm$html$Html$Attributes$stringProperty = F2(
 	function (key, string) {
 		return A2(
