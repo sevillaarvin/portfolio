@@ -12,6 +12,12 @@
     @apply top-0;
     @apply left-0;
     @apply w-full;
+
+    /**
+     * Needed so that it is the same size as the body
+     */
+    @apply h-full;
+
     @apply opacity-0;
     @apply invisible;
     @apply overflow-hidden;
@@ -39,6 +45,7 @@
 }
 
 .resume__sheet {
+    @apply py-4;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(7, min-content);
