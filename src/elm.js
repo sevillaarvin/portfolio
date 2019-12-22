@@ -6705,6 +6705,7 @@ var $author$project$Main$view = function (model) {
 						_List_fromArray(
 							[
 								$elm$html$Html$Attributes$class('text-4xl'),
+								$elm$html$Html$Attributes$class('lg:text-6xl'),
 								$elm$html$Html$Attributes$class('text-center')
 							]),
 						_List_fromArray(

@@ -196,6 +196,7 @@ view model =
             ]
             [ h1
                 [ class "text-4xl"
+                , class "lg:text-6xl"
                 , class "text-center"
                 ]
                 [ text resume.name ]

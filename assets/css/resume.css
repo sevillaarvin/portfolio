@@ -49,7 +49,7 @@
                          "project"
                          "education"
                          "award";
-    grid-gap: 0.4rem;
+    grid-gap: 1rem;
 }
 
 @screen md {
@@ -75,6 +75,7 @@
 
 .resume__subtitle {
     color: var(--color-primary);
+    @apply border-b-2;
 }
 
 .resume__name {
