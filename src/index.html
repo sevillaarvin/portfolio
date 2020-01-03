@@ -17,8 +17,8 @@
     </header>
 
     <main class="self-stretch">
-        <div class="md:h-full max-w-sm sm:max-w-full mx-auto sm:mx-0 sm:py-8 rounded-lg shadow-lg sm:flex sm:items-center">
-            <div class="py-8 sm:px-8 sm:w-1/3 border-b-2 sm:border-b-0 sm:border-r-2">
+        <div class="md:h-full max-w-sm sm:max-w-full mx-auto sm:mx-0 sm:py-8 rounded-lg shadow-lg sm:flex sm:items-start">
+            <div class="py-8 sm:px-4 sm:w-1/3 border-b-2 sm:border-b-0 sm:border-r-2">
                 <div class="h-32 flex justify-center mb-8">
                     <img src="<%= require('../assets/images/300.jpg') %>" alt="avatar"
                          class="max-h-full object-contain rounded-full border-2">
@@ -32,74 +32,67 @@
                     </label>
                 </div>
             </div>
-            <div id="vueapp"
-                 class="md:h-full py-8 sm:flex-grow sm:flex sm:justify-around sm:items-center content-around">
-                <ul class="md:h-full w-full flex flex-wrap text-center content-around">
-                    <li class="w-1/2 py-4 cursor-pointer hover:bg-red-700 hover:text-white rounded transition-3"><a
-                            href="#" @click="select('experiences')">Work</a>
+            <div id="vueapp" class="sm:w-full sm:self-center md:flex">
+                <ul class="md:h-full w-full flex flex-wrap text-center content-around md:self-center" :class="{ 'md:w-1/3': !!selected }">
+                    <li class="w-1/2 py-4 cursor-pointer hover:bg-red-700 hover:text-white rounded transition-3 md:w-full"
+                        @click="select('experiences')">Work
                     </li>
-                    <li class="w-1/2 py-4 cursor-pointer hover:bg-red-700 hover:text-white rounded transition-3"><a
-                            href="#" @click="select('projects')">Projects</a></li>
-                    <li class="w-1/2 py-4 cursor-pointer hover:bg-red-700 hover:text-white rounded transition-3"><a
-                            href="#" @click="select('skills')">Skills</a></li>
-                    <li class="w-1/2 py-4 cursor-pointer hover:bg-red-700 hover:text-white rounded transition-3"><a
-                            href="#" @click="select('education')">Education</a>
+                    <li class="w-1/2 py-4 cursor-pointer hover:bg-red-700 hover:text-white rounded transition-3 md:w-full"
+                        @click="select('projects')">Projects
+                    </li>
+                    <li class="w-1/2 py-4 cursor-pointer hover:bg-red-700 hover:text-white rounded transition-3 md:w-full"
+                        @click="select('skills')">Skills
+                    </li>
+                    <li class="w-1/2 py-4 cursor-pointer hover:bg-red-700 hover:text-white rounded transition-3 md:w-full"
+                        @click="select('education')">Education
                     </li>
                 </ul>
-                <hr>
-                <div v-show="selected" class="hidden mt-4" ref="info">
-                    <div v-if="selected == 'experiences'">
-                        <ul class="text-center">
-                            <li v-for="work in resume[selected]" class="mb-4">
-                                <h4 class="text-2xl">{{ work.company }}</h4>
-                                <h5>{{ work.position }}</h5>
-                                <p class="text-sm">{{ work.location }}</p>
-                                <p class="text-sm">{{ work.start }} - {{ work.end }}</p>
-                                <ul>
-                                    <li v-for="highlight in work.highlights">
-                                        {{ highlight }}
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div v-else-if="selected == 'projects'">
-                        <ul class="text-center">
-                            <li v-for="project in resume[selected]" class="mb-4">
-                                <h4 class="text-2xl">{{ project.name }}</h4>
-                                <h5>{{ project.description }}</h5>
-                                <p class="text-sm">{{ project.url }}</p>
-                                <ul>
-                                    <li v-for="keyword in project.keywords">
-                                        {{ keyword }}
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div v-else-if="selected == 'skills'">
-                        <ul class="text-center">
-                            <li v-for="skill in resume[selected]" class="mb-4">
-                                <h4 class="text-2xl">{{ skill.name }}</h4>
-                                <ul>
-                                    <li v-for="keyword in skill.keywords">
-                                        {{ keyword }}
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div v-else-if="selected == 'education'">
-                        <ul class="text-center">
-                            <li v-for="school in resume[selected]" class="mb-4">
-                                <h4 class="text-2xl">{{ school.institution }}</h4>
-                                <h5>{{ school.studyType }} {{ school.area }}</h5>
-                                <p class="text-sm">{{ school.location }}</p>
-                                <p class="text-sm">{{ school.start }} - {{ school.end }}</p>
-                                <p class="text-sm">{{ school.gpa ? `GPA: ` + school.gpa : "" }}</p>
-                            </li>
-                        </ul>
-                    </div>
+                <hr v-show="selected">
+                <div v-show="selected" class="hidden sm:h-64 overflow-y-scroll mt-4 md:w-2/3" ref="info">
+                    <ul v-if="selected == 'experiences'" class="text-center">
+                        <li v-for="work in resume[selected]" class="mb-4">
+                            <h4 class="text-2xl">{{ work.company }}</h4>
+                            <h5>{{ work.position }}</h5>
+                            <p class="text-sm">{{ work.location }}</p>
+                            <p class="text-sm">{{ work.start }} - {{ work.end }}</p>
+                            <ul>
+                                <li v-for="highlight in work.highlights">
+                                    {{ highlight }}
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul v-else-if="selected == 'projects'" class="text-center">
+                        <li v-for="project in resume[selected]" class="mb-4">
+                            <h4 class="text-2xl">{{ project.name }}</h4>
+                            <h5>{{ project.description }}</h5>
+                            <p class="text-sm">{{ project.url }}</p>
+                            <ul>
+                                <li v-for="keyword in project.keywords">
+                                    {{ keyword }}
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul v-else-if="selected == 'skills'" class="text-center">
+                        <li v-for="skill in resume[selected]" class="mb-4">
+                            <h4 class="text-2xl">{{ skill.name }}</h4>
+                            <ul>
+                                <li v-for="keyword in skill.keywords">
+                                    {{ keyword }}
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul v-else-if="selected == 'education'" class="text-center">
+                        <li v-for="school in resume[selected]" class="mb-4">
+                            <h4 class="text-2xl">{{ school.institution }}</h4>
+                            <h5>{{ school.studyType }} {{ school.area }}</h5>
+                            <p class="text-sm">{{ school.location }}</p>
+                            <p class="text-sm">{{ school.start }} - {{ school.end }}</p>
+                            <p class="text-sm">{{ school.gpa ? `GPA: ` + school.gpa : "" }}</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
