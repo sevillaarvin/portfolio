@@ -57,6 +57,14 @@ module.exports = (env, argv) => {
                         },
                     ],
                 },
+                {
+                    test: /\.elm$/,
+                    exclude: [/elm-stuff/, /node-modules/],
+                    use: {
+                        loader: "elm-webpack-loader",
+                        options: {},
+                    },
+                }
             ]
         },
         plugins: [
