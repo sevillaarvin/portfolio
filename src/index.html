@@ -33,7 +33,8 @@
                 </div>
             </div>
             <div id="vueapp" class="sm:w-full sm:self-center md:flex">
-                <ul class="md:h-full w-full flex flex-wrap text-center content-around md:self-center" :class="{ 'md:w-1/3': !!selected }">
+                <ul class="md:h-full w-full flex flex-wrap text-center content-around md:self-center"
+                    :class="{ 'md:w-1/3': !!selected }">
                     <li class="w-1/2 py-4 cursor-pointer hover:bg-red-700 hover:text-white rounded transition-3 md:w-full"
                         @click="select('experiences')">Work
                     </li>
@@ -119,7 +120,37 @@
 
 <input id="contact" type="checkbox" class="contact__input">
 <div class="contact__page">
-    TODO: Style contact details
+    <h2 class="text-2xl">Let me know what you think...</h2>
+    <ul class="list-none flex justify-around w-full max-w-xl">
+        <li>
+            <a href="https://github.com/sevillaarvin/">
+                <svg class="contact__icon">
+                    <use xlink:href="<%= require('../assets/images/sprite.svg') %>#icon-github"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="https://gitlab.com/sevillaarvin/">
+                <svg class="contact__icon">
+                    <use xlink:href="<%= require('../assets/images/sprite.svg') %>#icon-gitlab"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/sevillaarvin/">
+                <svg class="contact__icon">
+                    <use xlink:href="<%= require('../assets/images/sprite.svg') %>#icon-linkedin"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="mailto:sevillaarvin@gmail.com">
+                <svg class="contact__icon">
+                    <use xlink:href="<%= require('../assets/images/sprite.svg') %>#icon-gmail"></use>
+                </svg>
+            </a>
+        </li>
+    </ul>
 </div>
 </body>
 </html>

@@ -76,6 +76,12 @@
     @apply opacity-0;
     @apply invisible;
     @apply z-10;
+
+    display: grid;
+    grid-template-rows: min-content min-content;
+    grid-row-gap: 2.5rem;
+    align-content: center;
+    justify-items: center;
 }
 
 .contact__input:checked + .contact__page::before {
@@ -85,4 +91,13 @@
 .contact__input:checked + .contact__page {
     @apply opacity-100;
     @apply visible;
+}
+
+.contact__icon {
+    @apply w-16;
+    @apply h-16;
+    @apply bg-white;
+    @apply rounded-full;
+    @apply shadow-2xl;
+    @apply p-1;
 }
