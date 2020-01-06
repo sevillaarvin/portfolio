@@ -48,7 +48,7 @@
                     </li>
                 </ul>
                 <hr v-show="selected">
-                <div v-show="selected" class="hidden sm:h-64 overflow-y-scroll mt-4 md:w-2/3" ref="info">
+                <div v-show="selected" class="hidden sm:h-56 md:h-64 overflow-y-scroll mt-4 md:w-2/3" ref="info">
                     <ul v-if="selected == 'experiences'" class="text-center">
                         <li v-for="work in resume[selected]" class="mb-4">
                             <h4 class="text-2xl">{{ work.company }}</h4>
