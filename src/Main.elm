@@ -4,7 +4,7 @@ import Browser
 import Html exposing (Html, a, div, h1, h2, h3, li, p, text, ul)
 import Html.Attributes exposing (class, href)
 import Http
-import Json.Decode as Decode exposing (Decoder, Value, field, list, string, succeed)
+import Json.Decode as Decode exposing (Decoder, Value, field, list, nullable, string, succeed)
 import Json.Decode.Pipeline exposing (optional, required)
 import Svg exposing (svg, use)
 import Svg.Attributes exposing (xlinkHref)
@@ -57,6 +57,19 @@ type alias Project =
     { name : String
     , description : String
     , keywords : List String
+    , url : String
+    , extra : Maybe Extra
+    }
+
+
+type alias Extra =
+    { thumbnail : String
+    , icons : List Icon
+    }
+
+
+type alias Icon =
+    { name : String
     , url : String
     }
 
@@ -119,6 +132,21 @@ projectDecoder =
         |> required "description" string
         |> required "keywords" (list string)
         |> optional "url" string ""
+        |> optional "extra" (nullable extraDecoder) (Just (Extra "" [ Icon "" "" ]))
+
+
+extraDecoder : Decoder Extra
+extraDecoder =
+    succeed Extra
+        |> required "thumbnail" string
+        |> required "icons" (list iconDecoder)
+
+
+iconDecoder : Decoder Icon
+iconDecoder =
+    succeed Icon
+        |> required "name" string
+        |> required "url" string
 
 
 educationDecoder : Decoder Education

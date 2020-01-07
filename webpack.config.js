@@ -2,6 +2,7 @@ const path = require("path")
 const glob = require("glob")
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const PurgecssPlugin = require("purgecss-webpack-plugin")
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin")
@@ -64,10 +65,19 @@ module.exports = (env, argv) => {
                         loader: "elm-webpack-loader",
                         options: {},
                     },
+                },
+                {
+                    test: /\.json$/,
+                    loader: "file-loader",
+                    type: "javascript/auto",
+                    options: {
+                        name: "[path][name].[ext]"
+                    }
                 }
             ]
         },
         plugins: [
+            new CleanWebpackPlugin(),
             new BrowserSyncPlugin({
                 host: "localhost",
                 port: 3000,
@@ -78,7 +88,7 @@ module.exports = (env, argv) => {
             new HtmlWebpackPlugin({
                 name: "Arvin Sevilla",
                 title: "Software Engineer",
-                template: "src/index.html"
+                template: "src/index.html",
             }),
             new MiniCssExtractPlugin({
                 filename: "[name].css",

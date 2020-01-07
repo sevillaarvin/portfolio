@@ -213,7 +213,11 @@
         "JavaScript / ES 6",
         "MySQL"
       ],
-      "url": "https://salty-brushlands-14409.herokuapp.com/"
+      "url": "https://salty-brushlands-14409.herokuapp.com/",
+      "extra": {
+        "thumbnail": "/assets/images/cap3.png",
+        "icons": []
+      }
     },
     {
       "description": "E-commerce site for water enthusiasts.",
@@ -227,7 +231,11 @@
         "Mocha.js",
         "PostgreSQL"
       ],
-      "url": "https://clubseville.icu"
+      "url": "https://clubseville.icu",
+      "extra": {
+        "thumbnail": "/assets/images/cap2.png",
+        "icons": []
+      }
     },
     {
       "description": "Frontend for a hypothetical AI driven platform assisting in finding people a place to live.",
@@ -237,7 +245,11 @@
         "Bootstrap 4",
         "Node.js"
       ],
-      "url": "https://rentlify.cyberaesthete.xyz"
+      "url": "https://rentlify.cyberaesthete.xyz",
+      "extra": {
+        "thumbnail": "/assets/images/cap1.png",
+        "icons": []
+      }
     },
     {
       "description": "Simple API for Mobiledger",

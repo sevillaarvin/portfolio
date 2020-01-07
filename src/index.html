@@ -64,13 +64,20 @@
                         </li>
                     </ul>
                     <ul v-else-if="selected == 'projects'" class="text-center">
-                        <li v-for="project in resume[selected]" class="mb-4">
+                        <li v-for="project in resume[selected].filter((p) => !!p.url)" class="mb-4">
                             <h4 class="text-2xl">{{ project.name }}</h4>
+                            <section class="flex justify-center items-center mb-1">
+                                <iframe v-if="false" src="about:blank">
+                                    {{ project.url }}
+                                </iframe>
+                                <figure v-else class="sm:w-full md:w-10/12 lg:w-8/12 sm:h-48 overflow-y-scroll flex justify-center items-center">
+                                    <img :src="project.extra.thumbnail" alt="thumbnail">
+                                </figure>
+                            </section>
                             <h5>{{ project.description }}</h5>
-                            <p class="text-sm">{{ project.url }}</p>
                             <ul>
-                                <li v-for="keyword in project.keywords">
-                                    {{ keyword }}
+                                <li v-for="icon in project.extra.icons">
+                                    <img :src="icon.url" :alt="icon.name">
                                 </li>
                             </ul>
                         </li>
