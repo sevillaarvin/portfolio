@@ -1,6 +1,7 @@
 import "../assets/css/style.css"
 import "../assets/css/custom.css"
 import "../assets/css/resume.css"
+import "../assets/css/info.css"
 
 // For webpack copying only
 import "../assets/resume.json"
@@ -33,3 +34,5 @@ app.ports.getResume.subscribe((resume) => {
         },
     })
 })
+
+// import gsap from "gsap"

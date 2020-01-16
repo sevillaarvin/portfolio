@@ -1,0 +1,24 @@
+.transition-3 {
+    transition: all 0.3s ease-in-out;
+}
+
+.panel-enter,
+.panel-leave-to {
+    transform: scale(0);
+}
+
+.panel-enter-to,
+.panel-leave {
+    transition: transform 0.3s ease-in-out;
+    transform-origin: left;
+}
+
+.switch-enter,
+.switch-leave-to {
+    opacity: 0;
+}
+
+.switch-enter-to,
+.switch-leave {
+    @apply transition-3;
+}
