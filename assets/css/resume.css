@@ -2,6 +2,10 @@
     @apply hidden;
 }
 
+.transition-2 {
+    transition: all 0.2s ease-in-out;
+}
+
 .transition-8 {
     transition: all 0.8s ease-in-out;
 }
@@ -464,8 +468,30 @@
     @apply absolute;
     @apply top-0;
     @apply right-0;
-    @apply block;
-    @apply m-8;
+
+    @apply flex;
+    @apply justify-center;
+    @apply items-center;
+    @apply w-8;
+    @apply h-8;
+    @apply m-4;
+
+    @apply cursor-pointer;
+    @apply rounded-full;
+    @apply shadow;
+    @apply transition-2;
+}
+
+@screen lg {
+    .resume__close {
+        @apply m-8;
+    }
+}
+
+.resume__close:hover {
+    transform: translateY(-0.2rem);
+    background: var(--color-accent);
+    color: #fff;
 }
 
 .resume__input:checked + .resume__page::before {
