@@ -1,14 +1,14 @@
-require("../assets/css/style.css")
-require("../assets/css/custom.css")
-require("../assets/css/resume.css")
+import "../assets/css/style.css"
+import "../assets/css/custom.css"
+import "../assets/css/resume.css"
 
 // For webpack copying only
-require("../assets/resume.json")
-require("../assets/images/cap1.png")
-require("../assets/images/cap2.png")
-require("../assets/images/cap3.png")
+import "../assets/resume.json"
+import "../assets/images/cap1.png"
+import "../assets/images/cap2.png"
+import "../assets/images/cap3.png"
 
-const Elm = require("./Main.elm").Elm
+import { Elm } from "./Main.elm"
 import Vue from "vue/dist/vue.min.js"
 
 const app = Elm.Main.init({ node: document.querySelector("#elm-resume") })

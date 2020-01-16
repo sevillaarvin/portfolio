@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=production",
-    "dev": "webpack --mode=development",
-    "watch": "webpack-dev-server",
-    "start": "npm run watch",
+    "webpack": "webpack",
+    "prod": "npm run webpack -- --mode=production",
+    "dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
