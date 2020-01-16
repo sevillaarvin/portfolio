@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <link rel="shortcut icon" type="image/ico" href="<%= require('../assets/images/favicon.ico') %>"/>
+
+    <title><%= htmlWebpackPlugin.options.name %> | <%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body>
+<div class="container mx-auto sm:px-8 md:px-16 lg:px-32 xl:px-40 h-screen flex flex-col justify-between items-center">
+    <header class="header w-64 h-16 text-center relative z-20">
+        <label for="contact" class="cursor-pointer p-4">Reach Out</label>
+    </header>
+
+    <main class="self-stretch">
+        <div class="md:h-full max-w-sm sm:max-w-full mx-auto sm:mx-0 sm:py-8 rounded-lg shadow-lg sm:flex sm:items-start">
+            <div class="py-8 sm:px-4 sm:w-1/3 border-b-2 sm:border-b-0 sm:border-r-2">
+                <div class="h-32 flex justify-center mb-8">
+                    <img src="<%= require('../assets/images/me.jpg') %>" alt="avatar"
+                         class="max-h-full object-contain rounded-full border-2">
+                </div>
+                <div class="text-center">
+                    <p class="text-xl">Arvin Sevilla</p>
+                    <p class="text-base">Software Engineer</p>
+                    <label for="resume"
+                           class="text-base text-gray-700 m-2 p-2 hover:bg-red-700 hover:text-white rounded inline-block cursor-pointer transition-3">
+                        Résumé
+                    </label>
+                </div>
+            </div>
+            <div id="vueapp" class="sm:w-full sm:self-center md:flex">
+                <ul class="md:h-full w-full flex flex-wrap text-center content-around md:self-center"
+                    :class="{ 'md:w-1/3': !!selected }">
+                    <li class="w-1/2 py-4 cursor-pointer hover:bg-red-700 hover:text-white rounded transition-3 md:w-full"
+                        @click="select('experiences')">Work
+                    </li>
+                    <li class="w-1/2 py-4 cursor-pointer hover:bg-red-700 hover:text-white rounded transition-3 md:w-full"
+                        @click="select('projects')">Projects
+                    </li>
+                    <li class="w-1/2 py-4 cursor-pointer hover:bg-red-700 hover:text-white rounded transition-3 md:w-full"
+                        @click="select('skills')">Skills
+                    </li>
+                    <li class="w-1/2 py-4 cursor-pointer hover:bg-red-700 hover:text-white rounded transition-3 md:w-full"
+                        @click="select('education')">Education
+                    </li>
+                </ul>
+                <hr v-show="selected">
+                <transition name="panel" mode="out-in">
+                    <div v-show="selected" class="hidden sm:h-56 md:h-64 overflow-y-scroll mt-4 md:w-2/3" ref="info">
+                        <transition name="switch" mode="out-in">
+                            <ul v-if="selected == 'experiences'" class="text-center" key="experiences">
+                                <li v-for="work in resume[selected]" class="mb-4">
+                                    <h4 class="text-2xl">{{ work.company }}</h4>
+                                    <h5>{{ work.position }}</h5>
+                                    <p class="text-sm">{{ work.location }}</p>
+                                    <p class="text-sm">{{ work.start }} - {{ work.end }}</p>
+                                    <ul>
+                                        <li v-for="highlight in work.highlights">
+                                            {{ highlight }}
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul v-else-if="selected == 'projects'" class="text-center" key="projects">
+                                <li v-for="project in resume[selected].filter((p) => !!p.url)" class="mb-4">
+                                    <h4 class="text-2xl">{{ project.name }}</h4>
+                                    <section class="flex justify-center items-center mb-1">
+                                        <iframe v-if="false" src="about:blank">
+                                            {{ project.url }}
+                                        </iframe>
+                                        <figure v-else
+                                                class="sm:w-full md:w-10/12 lg:w-8/12 sm:h-48 overflow-y-scroll flex justify-center items-center">
+                                            <img :src="project.extra.thumbnail" alt="thumbnail">
+                                        </figure>
+                                    </section>
+                                    <h5>{{ project.description }}</h5>
+                                    <ul>
+                                        <li v-for="icon in project.extra.icons">
+                                            <img :src="icon.url" :alt="icon.name">
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul v-else-if="selected == 'skills'" class="text-center" key="skills">
+                                <li v-for="skill in resume[selected]" class="mb-4">
+                                    <h4 class="text-2xl">{{ skill.name }}</h4>
+                                    <ul>
+                                        <li v-for="keyword in skill.keywords">
+                                            {{ keyword }}
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul v-else-if="selected == 'education'" class="text-center" key="education">
+                                <li v-for="school in resume[selected]" class="mb-4">
+                                    <h4 class="text-2xl">{{ school.institution }}</h4>
+                                    <h5>{{ school.studyType }} {{ school.area }}</h5>
+                                    <p class="text-sm">{{ school.location }}</p>
+                                    <p class="text-sm">{{ school.start }} - {{ school.end }}</p>
+                                    <p class="text-sm">{{ school.gpa ? `GPA: ` + school.gpa : "" }}</p>
+                                </li>
+                            </ul>
+                        </transition>
+                    </div>
+                </transition>
+            </div>
+        </div>
+    </main>
+    <footer class="w-64 h-12">
+        <a href="#" class="cursor-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 256 48">
+                <polygon points="72 0, 184 0, 228 96, 28 96" fill="#e2e8f0" class="footer__box cursor-pointer"/>
+                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+                      class="fill-current text-gray-700 cursor-pointer">
+                    Blog
+                </text>
+            </svg>
+        </a>
+    </footer>
+</div>
+
+<input id="resume" type="checkbox" class="resume__input">
+<div class="resume__page">
+    <div id="elm-resume"></div>
+
+    <label for="resume" class="resume__close">X</label>
+</div>
+
+<input id="contact" type="checkbox" class="contact__input">
+<div class="contact__page">
+    <h2 class="text-2xl">Let me know what you think...</h2>
+    <ul class="list-none flex justify-around w-full max-w-xl">
+        <li>
+            <a href="https://github.com/sevillaarvin/">
+                <svg class="contact__icon">
+                    <use xlink:href="<%= require('../assets/images/sprite.svg') %>#icon-github"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="https://gitlab.com/sevillaarvin/">
+                <svg class="contact__icon">
+                    <use xlink:href="<%= require('../assets/images/sprite.svg') %>#icon-gitlab"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/sevillaarvin/">
+                <svg class="contact__icon">
+                    <use xlink:href="<%= require('../assets/images/sprite.svg') %>#icon-linkedin"></use>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="mailto:sevillaarvin@gmail.com">
+                <svg class="contact__icon">
+                    <use xlink:href="<%= require('../assets/images/sprite.svg') %>#icon-gmail"></use>
+                </svg>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

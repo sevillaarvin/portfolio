@@ -1,0 +1,505 @@
+.resume__input {
+    @apply hidden;
+}
+
+.transition-2 {
+    transition: all 0.2s ease-in-out;
+}
+
+.transition-8 {
+    transition: all 0.8s ease-in-out;
+}
+
+.resume__page {
+    @apply transition-8;
+    @apply absolute;
+    @apply top-0;
+    @apply left-0;
+    @apply w-full;
+
+    /**
+     * Needed so that it is the same size as the body
+     */
+    @apply h-full;
+
+    @apply opacity-0;
+    @apply invisible;
+    @apply overflow-hidden;
+    @apply z-30;
+    @apply p-4;
+    background: #fff;
+}
+
+@screen md {
+    .resume__page {
+        @apply p-12;
+    }
+}
+
+@screen lg {
+    .resume__page {
+        @apply p-16;
+    }
+}
+
+@screen xl {
+    .resume__page {
+        @apply p-20;
+    }
+}
+
+.resume__sheet {
+    @apply py-4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, min-content);
+    grid-template-areas: "name"
+                         "contact"
+                         "experience"
+                         "skill"
+                         "project"
+                         "education"
+                         "award";
+    grid-gap: 1rem;
+}
+
+@screen md {
+    .resume__sheet {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, min-content);
+        grid-template-areas: "name contact"
+                             "experience experience"
+                             "skill skill"
+                             "project project"
+                             "education education"
+                             "award award";
+        grid-gap: 1.6rem;
+    }
+}
+
+@screen xl {
+    .resume__sheet {
+        @apply m-auto;
+        max-width: 64rem;
+    }
+}
+
+.resume__subtitle {
+    color: var(--color-primary);
+    @apply border-b-2;
+}
+
+.resume__name {
+    grid-area: name;
+}
+
+.resume__contact {
+    grid-area: contact;
+}
+
+.resume__experience {
+    grid-area: experience;
+}
+
+.resume__experience-history:not(:last-child) {
+    @apply mb-4;
+}
+
+.resume__experience-highlights {
+    @apply mt-2;
+}
+
+.resume__experience-highlight-item {
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    grid-gap: 0.2rem;
+    @apply items-center;
+}
+
+.resume__experience-highlight-item:not(:last-child) {
+    @apply mb-1;
+}
+
+.resume__experience-highlight-icon {
+    fill: var(--color-accent);
+    width: 1rem;
+    height: 1rem;
+}
+
+.resume__experience-location {
+    @apply text-sm;
+}
+
+.resume__experience-date {
+    @apply text-sm;
+}
+
+@screen md {
+    .resume__experience-history {
+        display: grid;
+        grid-template-rows: repeat(3, min-content);
+        grid-template-columns: 1fr max-content;
+        grid-template-areas: "company location"
+                             "position date"
+                             "highlights highlights";
+        grid-gap: 0.2rem;
+    }
+
+    .resume__experience-header {
+        grid-area: header;
+    }
+
+    .resume__experience-company {
+        grid-area: company;
+    }
+
+    .resume__experience-position {
+        grid-area: position;
+    }
+
+    .resume__experience-location {
+        grid-area: location;
+
+        @apply flex;
+        @apply justify-end;
+        @apply items-center;
+    }
+
+    .resume__experience-date {
+        grid-area: date;
+
+        @apply flex;
+        @apply justify-end;
+    }
+
+    .resume__experience-highlights {
+        grid-area: highlights;
+        @apply mt-0;
+    }
+
+    .resume__experience-highlight-item {
+        grid-gap: 0.4rem;
+    }
+}
+
+@screen lg {
+    .resume__experience-highlights {
+        @apply my-2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.resume__skill {
+    grid-area: skill;
+}
+
+.resume__skill-item {
+    @apply my-2;
+}
+
+.resume__skill-list {
+    @apply my-2;
+    @apply text-center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.4rem;
+}
+
+@screen md {
+    .resume__skill-list {
+        @apply my-4;
+        @apply text-center;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0.8rem;
+    }
+}
+
+@screen lg {
+    .resume__skill-list {
+        @apply my-4;
+        @apply text-center;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1.2rem;
+    }
+}
+
+@screen xl {
+    .resume__skill-list {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.resume__project {
+    grid-area: project;
+}
+
+.resume__project-item:not(:last-child) {
+    @apply mb-4;
+}
+
+.resume__project-keywords {
+    @apply my-2;
+    @apply text-center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.4rem;
+}
+
+@screen md {
+    .resume__project-item {
+        display: grid;
+        grid-template-rows: repeat(3, min-content);
+        grid-template-columns: minmax(min-content, 1fr) 3fr;
+        grid-template-areas: "name description"
+                             "keywords keywords"
+                             "url url";
+        grid-gap: 0.4rem;
+    }
+
+    .resume__project-name {
+        grid-area: name;
+    }
+
+    .resume__project-description {
+        grid-area: description;
+    }
+
+    .resume__project-keywords {
+        @apply my-2;
+        @apply text-center;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0.8rem;
+
+        grid-area: keywords;
+    }
+
+    .resume__project-url {
+        grid-area: url;
+    }
+}
+
+@screen lg {
+    .resume__project-item {
+        grid-gap: 0.8rem;
+    }
+
+    .resume__project-item:not(:last-child) {
+        @apply mb-8;
+    }
+
+    .resume__project-keywords {
+        @apply my-0;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1.6rem;
+    }
+}
+
+@screen xl {
+    .resume__project-keywords {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.resume__education {
+    grid-area: education;
+}
+
+.resume__education-history:not(:last-child) {
+    @apply mb-4;
+}
+
+.resume__education-location {
+    @apply text-sm;
+}
+
+.resume__education-date {
+    @apply text-sm;
+}
+
+@screen md {
+    .resume__education-history {
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        grid-template-rows: repeat(2, min-content);
+        grid-template-areas: "institution location"
+                             "course date";
+    }
+
+    .resume__education-location {
+        grid-area: location;
+
+        @apply flex;
+        @apply justify-end;
+    }
+
+    .resume__education-date {
+        grid-area: date;
+
+        @apply flex;
+        @apply justify-end;
+    }
+}
+
+@screen lg {
+    .resume__education-history {
+        grid-gap: 0.4rem;
+    }
+
+    .resume__education-history:not(:last-child) {
+        @apply mb-8;
+    }
+}
+
+@screen xl {
+    .resume__education {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0.4rem;
+    }
+
+    .resume__education-title {
+        grid-column: 1 / -1;
+    }
+
+    .resume__education-history {
+        @apply block;
+        @apply text-center;
+    }
+
+    .resume__education-location {
+        @apply block;
+    }
+
+    .resume__education-date {
+        @apply block;
+    }
+}
+
+.resume__award {
+    grid-area: award;
+}
+
+.resume__award-history:not(:last-child) {
+    @apply mb-4;
+}
+
+.resume__award-date {
+    @apply text-sm;
+}
+
+.resume__award-awarder {
+    @apply text-sm;
+}
+
+@screen md {
+    .resume__award-history {
+        display: grid;
+        grid-template-rows: repeat(2, min-content);
+        grid-template-columns: 1fr max-content;
+    }
+
+    .resume__award-date {
+        @apply flex;
+        @apply justify-end;
+    }
+
+    .resume__award-awarder {
+        @apply flex;
+        @apply justify-end;
+    }
+}
+
+@screen lg {
+    .resume__award-history {
+        grid-gap: 0.4rem;
+    }
+
+    .resume__award-history:not(:last-child) {
+        @apply mb-8;
+    }
+}
+
+@screen xl {
+    .resume__award {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.6rem;
+    }
+
+    .resume__award-header {
+        grid-column: 1 / -1;
+    }
+
+    .resume__award-history {
+        @apply text-center;
+        grid-template-areas: "title"
+                             "summary"
+                             "awarder"
+                             "date";
+        grid-gap: 0;
+    }
+
+    .resume__award-history:not(:last-child) {
+        @apply mb-0;
+    }
+
+    .resume__award-title {
+        grid-area: title;
+    }
+
+    .resume__award-summary {
+        grid-area: summary;
+        @apply text-sm;
+    }
+
+    .resume__award-date {
+        @apply block;
+        grid-area: date;
+    }
+
+    .resume__award-awarder {
+        @apply block;
+        grid-area: awarder;
+    }
+}
+
+.resume__close {
+    @apply absolute;
+    @apply top-0;
+    @apply right-0;
+
+    @apply flex;
+    @apply justify-center;
+    @apply items-center;
+    @apply w-8;
+    @apply h-8;
+    @apply m-4;
+
+    @apply cursor-pointer;
+    @apply rounded-full;
+    @apply shadow;
+    @apply transition-2;
+}
+
+@screen lg {
+    .resume__close {
+        @apply m-8;
+    }
+}
+
+.resume__close:hover {
+    transform: translateY(-0.2rem);
+    background: var(--color-accent);
+    color: #fff;
+}
+
+.resume__input:checked + .resume__page::before {
+    transform: scale(12);
+}
+
+.resume__input:checked + .resume__page {
+    @apply opacity-100;
+    @apply visible;
+    @apply overflow-auto;
+}
