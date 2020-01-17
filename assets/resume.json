@@ -1,0 +1,338 @@
+{
+  "selectedTemplate": 2,
+  "headings": {},
+  "basics": {
+    "phone": "09561268612",
+    "name": "Arvin Sevilla",
+    "location": {
+      "address": "Mandaluyong, Philippines"
+    },
+    "email": "sevillaarvin@gmail.com",
+    "website": "https://portfolio.cyberaesthete.xyz"
+  },
+  "education": [
+    {
+      "studyType": "",
+      "location": "Quezon City, Philippines",
+      "institution": "Tuitt Coding Bootcamp",
+      "endDate": "Jan 2019",
+      "area": "Full-Stack Web Development",
+      "startDate": "Oct 2018",
+      "gpa": ""
+    },
+    {
+      "endDate": "Mar 2014",
+      "area": "Accountancy",
+      "startDate": "Jun 2010",
+      "studyType": "BS",
+      "institution": "Notre Dame of Dadiangas University",
+      "location": "GSC, Philippines",
+      "gpa": "1.39"
+    }
+  ],
+  "work": [
+    {
+      "highlights": [],
+      "company": "Yondu, Inc.",
+      "position": "Frontend Developer",
+      "location": "BGC, Taguig, Philippines",
+      "startDate": "Oct 2019",
+      "endDate": "Present"
+    },
+    {
+      "highlights": [
+        "Implement attendance summary reports",
+        "Implement email notifications for requests",
+        "Implement JWT authentication",
+        "Add other CRUD features",
+        "Implement features for restaurant POS integration",
+        "Implement operations reporting (sale, purchase, inventory) module",
+        "Implement unit and integration testing",
+        "Update and maintain database migration files",
+        "Maintenance and debugging"
+      ],
+      "company": "Posbang Inc.",
+      "position": "Junior Software Engineer",
+      "location": "Mandaluyong, Philippines",
+      "startDate": "Feb 2019",
+      "endDate": "Oct 2019"
+    },
+    {
+      "position": "Chief Technology Officer",
+      "company": "QBITS, Inc.",
+      "website": "https://qbitsolutions.net",
+      "startDate": "May 2018",
+      "endDate": "Sep 2018",
+      "location": "Mandaluyong, Philippines",
+      "highlights": [
+        "Website Administration - Wordpress/Wix",
+        "Marketing Technologist - Mautic",
+        "System Administration - Windows Server 2012",
+        "API Development and Technical Support - Accounting Software"
+      ]
+    },
+    {
+      "position": "Finance Service Specialist",
+      "website": "",
+      "company": "QBE GSSC",
+      "startDate": "Jul 2017",
+      "endDate": "Apr 2018",
+      "location": "BGC, Taguig, Philippines",
+      "highlights": [
+        "Reconciled and closed general accounting books quarterly."
+      ]
+    },
+    {
+      "position": "Finance Analyst",
+      "company": "IPM Construction",
+      "startDate": "Apr 2016",
+      "endDate": "Jun 2017",
+      "location": "Pasig, Philippines",
+      "highlights": [
+        "Recorded, reviewed, and closed general accounting transactions monthly."
+      ]
+    },
+    {
+      "endDate": "Feb 2016",
+      "startDate": "Nov 2014",
+      "highlights": [
+        "Provided financial assurance services/external audit to food manufacturing, retail, and real estate companies."
+      ],
+      "location": "Makati, Philippines",
+      "position": "Audit Associate",
+      "company": "SGV & Co."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": [
+        "Vue.js",
+        "Vuetify",
+        "Bootstrap",
+        "Sass",
+        "Tailwind CSS",
+        "Npm",
+        "Webpack",
+        "Babel",
+        "SVG",
+        "GSAP",
+        "Elm",
+        "d3.js",
+        "Nuxt.js"
+      ]
+    },
+    {
+      "name": "Backend",
+      "keywords": [
+        "Laravel",
+        "Yii",
+        "Rails",
+        "Express.js"
+      ]
+    },
+    {
+      "keywords": [
+        "MySQL",
+        "PostgreSQL",
+        "SQLite"
+      ],
+      "name": "Database Languages"
+    },
+    {
+      "name": "Testing",
+      "keywords": [
+        "PHPUnit",
+        "Codeception",
+        "Prophecy",
+        "Mocha.js",
+        "Chai",
+        "Sinon.js"
+      ]
+    },
+    {
+      "keywords": [
+        "JavaScript",
+        "PHP",
+        "Ruby",
+        "Elm",
+        "Python",
+        "VBA"
+      ],
+      "name": "Programming Languages"
+    },
+    {
+      "name": "Markup / File Format",
+      "keywords": [
+        "HTML",
+        "JSON",
+        "Markdown",
+        "YAML",
+        "XML"
+      ]
+    },
+    {
+      "name": "Enterprise Resource Planning",
+      "keywords": [
+        "QuickBooks Enterprise",
+        "PeopleSoft, ProSume, Cognos",
+        "SAP ECC 6.0"
+      ]
+    },
+    {
+      "name": "DevOps Tools",
+      "keywords": [
+        "Docker / Docker-Compose",
+        "LXC / LXD",
+        "Vagrant / VirtualBox",
+        "Gitlab CI"
+      ]
+    },
+    {
+      "keywords": [
+        "Git",
+        "SSH",
+        "Nginx",
+        "Apache",
+        "Bash",
+        "PowerShell",
+        "Linux",
+        "Windows"
+      ],
+      "name": "Other Technologies"
+    }
+  ],
+  "projects": [
+    {
+      "description": "Social media platform to share your thoughts.",
+      "name": "Yeet",
+      "keywords": [
+        "Laravel 5",
+        "HTML 5",
+        "CSS 3",
+        "JavaScript / ES 6",
+        "MySQL"
+      ],
+      "url": "https://salty-brushlands-14409.herokuapp.com/",
+      "extra": {
+        "thumbnail": "/assets/images/cap3.png",
+        "icons": []
+      }
+    },
+    {
+      "description": "E-commerce site for water enthusiasts.",
+      "name": "Club Seville",
+      "keywords": [
+        "Vue.js 2",
+        "Nuxt.js 2",
+        "Vuetify",
+        "Express.js 4",
+        "Knex.js",
+        "Mocha.js",
+        "PostgreSQL"
+      ],
+      "url": "https://clubseville.icu",
+      "extra": {
+        "thumbnail": "/assets/images/cap2.png",
+        "icons": []
+      }
+    },
+    {
+      "description": "Frontend for a hypothetical AI driven platform assisting in finding people a place to live.",
+      "name": "Rentlify",
+      "keywords": [
+        "Vue.js 2",
+        "Bootstrap 4",
+        "Node.js"
+      ],
+      "url": "https://rentlify.cyberaesthete.xyz",
+      "extra": {
+        "thumbnail": "/assets/images/cap1.png",
+        "icons": []
+      }
+    },
+    {
+      "description": "Simple API for Mobiledger",
+      "keywords": [
+        "Express.js",
+        "MongoDB"
+      ],
+      "name": "ledgerapi"
+    },
+    {
+      "description": "Android UI for ledger-cli accounting software",
+      "name": "Mobiledger",
+      "keywords": [
+        "Android Studio 3",
+        "Java",
+        "XML"
+      ]
+    },
+    {
+      "name": "PeopleSoft, nVision, and ProSume Automation Projects through Excel VBA",
+      "keywords": [
+        "Microsoft Excel 2013",
+        "VBA"
+      ],
+      "description": "PeopleSoft and nVision - Automated various report preparation functions, ProSume - Automated preparation of EDI entries"
+    },
+    {
+      "description": "A simple Philippine payroll system in Excel",
+      "name": "Simple Payroll System",
+      "keywords": [
+        "Microsoft Excel 2013",
+        "VBA"
+      ]
+    },
+    {
+      "keywords": [
+        "Python3",
+        "MySQL"
+      ],
+      "name": "Python3 Scraping",
+      "description": "Gathered contact information of various companies in the Philippines"
+    },
+    {
+      "description": "FICO - Participated in the Blue Printing process. Prepared the Chart of Accounts to be used in production",
+      "keywords": [
+        "SAP ECC 6.0"
+      ],
+      "name": "SAP Implementation"
+    }
+  ],
+  "awards": [
+    {
+      "summary": "Outstanding Performance for the month of Feb 2018",
+      "date": "Feb 2018",
+      "title": "Certificate of Recognition",
+      "awarder": "QBE GSSC RO"
+    },
+    {
+      "awarder": "QBE GSSC RO",
+      "title": "Certificate of Recognition",
+      "date": "Feb 2018",
+      "summary": "Highest scorecard rating per team lead for the month of Feb 2018"
+    },
+    {
+      "awarder": "UPSITF",
+      "title": "Certificate of Completion",
+      "date": "Jul 2017",
+      "summary": "Web Development using HTML & CSS Training"
+    },
+    {
+      "date": "Oct 2014",
+      "summary": "CPA Board Examination held in the Philippines",
+      "awarder": "CPAR",
+      "title": "Top 17 CPA Board Exam"
+    }
+  ],
+  "sections": [
+    "templates",
+    "profile",
+    "education",
+    "work",
+    "skills",
+    "projects",
+    "awards"
+  ]
+}
