@@ -63,7 +63,7 @@ module.exports = (env, argv) => {
                     exclude: [/elm-stuff/, /node-modules/],
                     use: {
                         loader: "elm-webpack-loader",
-                        options: {},
+                        options: { optimize: argv.mode == "production" },
                     },
                 },
                 {

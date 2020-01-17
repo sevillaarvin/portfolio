@@ -1,6 +1,9 @@
 name: CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build-and-deploy:
@@ -17,5 +20,5 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@releases/v3-test
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: master
+        BRANCH: gh-pages
         FOLDER: public
